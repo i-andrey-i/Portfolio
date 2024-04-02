@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кабинет пользователя</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body id="profile-page">
+    <header>
+        <nav class="navigation">
+            <a class="logo"><img src="img/logo.png" alt="Логотип" width="230" height="60"></a>
+
+            <ul class="navigation-items">
+                <li class="search"><input class="input" type="text" placeholder="Поиск" name="one-line" size="20"></input></li>
+                <li class="link"><a href="none"><p class="link-text">Главная</p></a></li>
+                <li class="link"><a href="none"><p class="link-text">Проекты</p></a></li>
+            </ul>
+
+            <a href="#profile-page" class="profile-link">
+                <img class="img-profile-link" src="img/user-icon.png" alt="Ссылка на профиль" width="42" height="42">
+                <p class="profile-link-text"> Мой профиль</p>
+            </a>
+        </nav>     
+    </header>
+
+    <main>
+        <article class="two-sections">
+            <section class="right-section">
+                <ul class="right-section-navigation">
+                    <li class="right-section-items"><a class="link-text" href="#main-section-page"> <img class="decor-element" src="img/decor-1.png" width="23" height="23">Мои данные</a></li>
+                    <li class="right-section-items"><a class="link-text" href="#my-works-page"> <img class="decor-element" src="img/decor-2.png" width="23" height="23"> Мои работы</a></li>
+                </ul>
+                <a href="none" class="right-section-enter"> Выйти </a>
+            </section>
+    
+            <section class="main-information-section" id="main-section-page">
+                <div class="user">
+                    <img src="img/user-icon-2.png" width="77" height="80">
+                    <p class="user-name">ФИО</p>
+                </div>
+                
+                <ul class="information-items">
+                    <li class="information-item-title">
+                        <p class="information-text">Город:</p>
+                        <input class="input-information" type="text" placeholder="" name="one-line" size="20"></input>
+                    </li>
+                    <li class="information-item-title">
+                        <p class="information-text">Учебное заведение:</p>
+                        <input class="input-information" type="text" placeholder="" name="one-line" size="20"></input>
+                    </li>
+                    <li class="information-item-description">
+                        <p class="information-text">Описание:</p>
+                        <input class="input-information-ds" type="text" placeholder="" name="one-line" size="20"></input>
+                    </li>
+                        
+                    <li class="information-item-contacts">
+                        <p class="information-text">Контакты:</p>
+                        <div class="contact">
+                            <img class="contact-img" src="img/phone.png" width="24" height="24">
+                            <input class="input-information-contact" type="text" placeholder="" name="one-line" size="20"></input>
+                        </div>
+
+                        <div class="contact">
+                            <img class="contact-img" src="img/mail.png" width="24" height="24">
+                            <input class="input-information-contact" type="text" placeholder="" name="one-line" size="20"></input>
+                        </div>
+
+                        <div class="contact">
+                            <img class="contact-img" src="img/vk.png" width="24" height="24">
+                            <input class="input-information-contact" type="text" placeholder="" name="one-line" size="20"></input>
+                        </div>     
+                    </li>
+                 </ul>
+                 <button><p class="information-item-change">Изменить</p></button>
+            </section>
+        </article>
+
+
+        <section class="my-works-section" id="my-works-page">
+            <center><img class="poster" src="img/name.png" alt="Мои работы" width="366" height="237"></center>
+
+            <div class="all-my-works">
+                <article class="my-work-item">
+                    <a href="none">
+                        <p class="title-of-my-work"> Название работы </p>
+                        <img class="img-of-work" src="img/img-test.png" alt="Изображение работы" >
+                        <p class="description"> тут будет описание  </p>
+                        <time class="date" datetime="15.03.2024"> 15.03.2024 </time>
+                    </a>
+                </article>
+
+                <article class="my-work-item">
+                    <a href="none">
+                        <p class="title-of-my-work"> Название работы </p>
+                        <img class="img-of-work" src="img/img-test.png" alt="Изображение работы" >
+                        <p class="description"> тут будет описание  </p>
+                        <time class="date" datetime="15.03.2024"> 15.03.2024 </time>
+                    </a>
+                </article>
+
+                <article class="my-work-item">
+                    <a href="none">
+                        <p class="title-of-my-work"> Название работы </p>
+                        <img class="img-of-work" src="img/img-test.png" alt="Изображение работы" >
+                        <p class="description"> тут будет описание  </p>
+                        <time class="date" datetime="15.03.2024"> 15.03.2024 </time>
+                    </a>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+    </footer>
+</body>
+</html>
