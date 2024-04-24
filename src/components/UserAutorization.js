@@ -7,30 +7,40 @@ import UserRegistration from "./UserRegistration";
 
 function UserAutorization() {
   
-  const [data, setData] = useState({
-    email: '',
-    password: ''
+  const [person, setPerson] = useState({ username: '', password: '' });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const response = await fetch('ссылка', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(person)
     });
-   
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      const formData = new FormData(event.target);
-  
-      axios.post('ссылка', formData)
-        .then((response) => {
-          setData(response.data);
-        })};
+
+    const data = await response.json();
+    console.log(data);
+  };
+
+  const handleChange = (e) => {
+    setPerson({
+      ...person,
+      [e.target.name]: e.target.value
+    });
+  };
 
   return(
     <center><div class="list-entry" >
       <center>
         <h3 class="list-entry-name">ВХОД</h3>
         <form onSubmit={handleSubmit}>
-          <input class="list-entry-input" type="email" value={data.email} onChange={(e) => setData({...data, email: e.target.value})} placeholder="Эл. адрес" ></input>
-          <input class="list-entry-input" type="password" value={data.password} onChange={(e) => setData({...data, password: e.target.value})} placeholder="Пароль" ></input>
+          <input class="list-entry-input" type="email" value={person.email} onChange={handleChange} placeholder="Эл. адрес" ></input>
+          <input class="list-entry-input" type="password" value={person.password} onChange={handleChange} placeholder="Пароль" ></input>
+          <button class="list-entry-next" type="submit" >Продолжить</button>
         </form>
-          
-        <button class="list-entry-next" type="submit" >Продолжить</button>
+        
         <p class="list-entry-text"> Еще не зарегистрированы? <Link to="/reg"> Зарегистрируйтесь</Link></p>
       </center>
 
