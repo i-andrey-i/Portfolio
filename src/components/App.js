@@ -4,14 +4,14 @@ import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-rou
 import MainWorksPage from "./MainWorksPage";
 import MyAccountPage from "./MyAccountPage";
 import UserRegistration from "./UserRegistration";
-import UserAutorization from "./UserAutorization";
+import UserAuthorization from "./UserAuthorization";
 
 const App = () => {
   
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="*" element={<UserAutorization/>} />
+        <Route path="*" element={<UserAuthorization/>} />
         <Route path="reg" element={<UserRegistration/>} />
         <Route path="main" element={<MainWorksPage/>} />
         <Route path="main/my-page" element={<MyAccountPage/>} />
