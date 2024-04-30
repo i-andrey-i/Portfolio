@@ -144,6 +144,10 @@ a{
     line-height: 22px;
 }
 
+.create-work{
+    margin-top: 35px;
+}
+
 
 /* SECTION 2 */
 
@@ -445,4 +449,120 @@ button{
     line-height: 15.85px;
     text-align: center;
 
+}
+
+/* CREATE NEW WORK PAGE */
+
+.title-page-new{
+    font-family: Montserrat;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 30.48px;
+    text-align: center;
+    color: rgba(255, 248, 248, 1);
+}
+
+.all-info-sec{
+    
+    background-color: #FFFFFF;
+    margin-left: 5%;
+    height: 110px;
+    width: 40%;
+}
+
+.all-info-sec-sp{
+    background-color: #FFFFFF;
+    margin-left: 5%;
+    height: 460px;
+    width: 40%;
+}
+
+.new-page-text{
+    border-bottom: 1px solid rgba(138, 177, 235, 1);
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18.29px;
+    padding-left: 5%;
+    color: rgba(109, 109, 109, 1);
+    
+}
+
+.new-page-info{
+    background-color: #FFFFFF;
+    border:none;
+    padding-bottom: 2%;
+    padding-left: 5%;
+    color: rgba(70, 70, 113, 1);
+
+}
+
+.create-new-project{
+    background: linear-gradient(100.73deg, #B47CFC 8.32%, #7432CA 78.38%);
+    margin-left: 5%;
+    width: 15%;
+    border-radius: 10px;
+    padding-left: 2%;
+
+}
+
+.new-page-text-create{
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.38px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+}
+
+.add-pic-new{
+
+}
+
+.add-proj-photo{
+    width: 40%;
+    height: 329px;
+    float: right;
+    margin-right: 5%;
+    margin-top: -900px;
+    border-radius: 5px;
+    background: rgba(224, 235, 254, 1);
+    border: 2px solid rgba(112, 138, 206, 1)
+}
+
+.previw-pic{
+    float: right;
+    margin-top: -550px;
+    margin-right: 21%;
+    width: 10%;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+    text-align: center;
+    color: #FFFFFF;
+    background: rgba(43, 31, 108, 0.53);
+    border-radius: 5px;
+}
+
+.pic-sec-sp{
+    width: 40%;
+    height: 480px;
+    background: rgba(95, 82, 173, 0.53);
+    float: right;
+    margin-right: 5%;
+    border-radius: 10px;
+    margin-top: -500px;
+}
+
+.new-page-text-sp{
+    padding-left: 2%;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.94px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+    border-bottom: 1px solid rgb(109, 112, 182)
 }

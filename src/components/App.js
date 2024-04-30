@@ -5,6 +5,7 @@ import MainWorksPage from "./MainWorksPage";
 import MyAccountPage from "./MyAccountPage";
 import UserRegistration from "./UserRegistration";
 import UserAuthorization from "./UserAuthorization";
+import CreateWorkPage from "./CreateWorkPage";
 
 const App = () => {
   
@@ -15,6 +16,8 @@ const App = () => {
         <Route path="reg" element={<UserRegistration/>} />
         <Route path="main" element={<MainWorksPage/>} />
         <Route path="main/my-page" element={<MyAccountPage/>} />
+        <Route path="main/my-page/create-work" element={<CreateWorkPage/>} />
+
 
       </Routes>
     </BrowserRouter>

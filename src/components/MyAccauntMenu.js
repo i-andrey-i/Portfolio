@@ -6,13 +6,16 @@ import dec2 from "./img/decor-2.png";
 class MyAccountMenu extends React.Component {
   render(){
     return(
-      <section class="right-section">
+      <div class="right-section">
         <ul class="right-section-navigation">
             <li class="right-section-items"><a class="link-text" href="none"> <img class="decor-element" src={dec1} alt="" width="23" height="23"/>Мои данные</a></li>
             <li class="right-section-items"><a class="link-text" href="none"> <img class="decor-element" src={dec2} alt="" width="23" height="23"/> Мои работы</a></li>
+            <Link to="/main/my-page/create-work" class="right-section-items link-text"> Новый проект </Link>
         </ul>
         <Link to="*" class="right-section-enter"> Выйти </Link>
-      </section>
+      </div>
+      
+
     )
   }
 }
