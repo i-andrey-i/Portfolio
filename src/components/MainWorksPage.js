@@ -1,6 +1,7 @@
 import React from "react";
 import EachWork from "./EachWork";
 import Header from "./Header";
+import { Link } from 'react-router-dom';
 
 class MainWorksPage extends React.Component {
   render(){
@@ -18,11 +19,9 @@ class MainWorksPage extends React.Component {
 
             <section class="my-works-section" id="my-works-page">
                 <ul class="all-my-works">
-                    <li class="my-work-item"><EachWork/></li>
-
-                    <li class="my-work-item"><EachWork/></li>
-
-                    <li class="my-work-item"><EachWork/></li>
+                  <li class="my-work-item"><Link to="/main/each-work"><EachWork/></Link></li>
+                  <li class="my-work-item"><Link to="/main/each-work"><EachWork/></Link></li>
+                  <li class="my-work-item"><Link to="/main/each-work"><EachWork/></Link></li>
                 </ul>
             </section>
         </main>

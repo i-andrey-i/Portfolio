@@ -10,7 +10,7 @@ class MyAccountMenu extends React.Component {
         <ul class="right-section-navigation">
             <li class="right-section-items"><a class="link-text" href="none"> <img class="decor-element" src={dec1} alt="" width="23" height="23"/>Мои данные</a></li>
             <li class="right-section-items"><a class="link-text" href="none"> <img class="decor-element" src={dec2} alt="" width="23" height="23"/> Мои работы</a></li>
-            <Link to="/main/my-page/create-work" class="right-section-items link-text"> Новый проект </Link>
+            <li class="right-section-items-new"><Link to="/main/my-page/create-work" class="tetx-new-work" > Новый проект </Link></li>
         </ul>
         <Link to="*" class="right-section-enter"> Выйти </Link>
       </div>

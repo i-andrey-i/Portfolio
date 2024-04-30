@@ -566,3 +566,106 @@ button{
     color: rgba(255, 255, 255, 1);
     border-bottom: 1px solid rgb(109, 112, 182)
 }
+
+.right-section-items-new{
+    height: 30px;
+    margin-left:38px;
+    width: 50%;
+    text-align: center;
+    background: linear-gradient(100.73deg, #B47CFC 8.32%, #7432CA 78.38%);
+    border-radius: 10px;
+    padding-top: 2%;
+    margin-top: 80%;
+
+}
+
+.tetx-new-work{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+/* PAGE OF WORK */ 
+
+.info-about-work{
+    background-color: #FFFFFF;
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 10px;
+    
+}
+
+.description-of-work{
+    border-top: 1px solid rgba(58, 118, 206, 1)
+}
+
+.work-title-each{
+    font-family: Montserrat;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 31.69px;
+    text-align: center;
+    color: rgba(58, 49, 113, 1);
+}
+
+.text-of-work-descr{
+    width: 80%;
+    margin-left: 10%;
+    height: 150px;
+}
+
+.date-work-new{
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21.94px;
+    padding-left: 10%;
+    color: rgba(58, 49, 113, 1);
+    border-bottom: 1px solid rgba(58, 118, 206, 1)
+}
+
+.data-creation{
+    color: rgba(0, 0, 0, 1);
+}
+
+.picture-of-work{
+    width: 60%;
+    margin-left: 20%;
+    height: 400px;
+    background-color: rgb(217, 217, 217);
+    margin-bottom: 20px;
+}
+
+.text-in-pic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.special-matirial{
+    border-top: 1px solid rgba(58, 118, 206, 1);
+    padding-left: 10%;
+    margin-bottom: 50px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.title-of-dop{
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21.94px;
+}
+
+.dop-nat-each{
+    margin-bottom: 1%;
+    list-style: none;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.94px;
+    text-align: left;
+}
