@@ -13,7 +13,7 @@ const UserAuthorization = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // отправка данных на сервер и получение токенов
-    const response = await fetch(' ', {
+    const response = await fetch('/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -24,8 +24,7 @@ const UserAuthorization = () => {
   const data = await response.json();
   
   // сохранение токенов в localStorage
-  localStorage.setItem('accessToken', data.accessToken);
-  localStorage.setItem('refreshToken', data.refreshToken);
+  localStorage.setItem('accessToken', data.access_token);
 
   // перенаправление на нужную страницу
   window.location.href = '/main';}

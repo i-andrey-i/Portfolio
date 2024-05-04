@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header"
 import MyAccountInformation from "./MyAccountInformation";
-import MyAccountMenu from "./MyAccauntMenu";
+import MyAccountMenu from "./MyAccountMenu";
 import MyAccountWorksList from "./MyAccountWorksList";
 
 class MyAccountPage extends React.Component {
