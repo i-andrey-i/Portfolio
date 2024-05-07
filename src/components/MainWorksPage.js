@@ -1,33 +1,29 @@
 import React from "react";
-import EachWork from "./EachWork";
+import ProjectCard from "./ProjectCard";
 import Header from "./Header";
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
-class MainWorksPage extends React.Component {
-  render(){
-    return(
-      <div>
+const MainWorksPage = () => (
+    <div>
         <Header/>
         <main>
-          <center>
-            <ul class="menu-search">
-                <li class="search-item"> Все проекты </li>
-                <li class="search-item sp "> Подписки </li>
-                <li class="search-item "> Новые проекты </li>
-            </ul>
-          </center>
+            <center>
+                <ul className="menu-search">
+                    <li className="search-item"> Все проекты</li>
+                    <li className="search-item sp "> Подписки</li>
+                    <li className="search-item "> Новые проекты</li>
+                </ul>
+            </center>
 
-            <section class="my-works-section" id="my-works-page">
-                <ul class="all-my-works">
-                  <li class="my-work-item"><Link to="/each-work"><EachWork/></Link></li>
-                  <li class="my-work-item"><Link to="/each-work"><EachWork/></Link></li>
-                  <li class="my-work-item"><Link to="/each-work"><EachWork/></Link></li>
+            <section className="my-works-section" id="my-works-page">
+                <ul className="all-my-works">
+                    <li className="my-work-item"><Link to="/each-work"><ProjectCard/></Link></li>
+                    <li className="my-work-item"><Link to="/each-work"><ProjectCard/></Link></li>
+                    <li className="my-work-item"><Link to="/each-work"><ProjectCard/></Link></li>
                 </ul>
             </section>
         </main>
-      </div>
-    )
-  }
-}
+    </div>
+);
 
 export default MainWorksPage

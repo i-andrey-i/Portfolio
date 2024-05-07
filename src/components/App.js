@@ -1,30 +1,40 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-router-dom";
+import React, {useState} from "react";
+import {BrowserRouter as Router, Route, Routes, BrowserRouter} from "react-router-dom";
 // АКТУЛЬНАЯ ВЕРСИЯ
 import MainWorksPage from "./MainWorksPage";
-import MyAccountPage from "./MyAccountPage";
+import AccountPage from "./AccountPage";
 import UserRegistration from "./UserRegistration";
 import UserAuthorization from "./UserAuthorization";
 import CreateWorkPage from "./CreateWorkPage";
-import EachWorkPage from "./EachWorkPage";
-import UserRegInformation from "./UserRegInformation";
+import ProjectPage from "./ProjectPage";
+import UserProfileCreate from "./UserProfileCreate";
+import {getMe} from "../api/AuthApi";
 
 const App = () => {
-  
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="*" element={<MainWorksPage/>} />
-        <Route path="auto" element={<UserAuthorization/>} />
-        <Route path="auto/reg" element={<UserRegistration/>} />
-        <Route path="auto/reg/inf" element={<UserRegInformation/>} />
-        <Route path="auto/my-page" element={<MyAccountPage/>} />
-        <Route path="auto/my-page/create-work" element={<CreateWorkPage/>} />
-        <Route path="each-work" element={<EachWorkPage/>} />
+    const token = localStorage.getItem("accessToken");
+    if (token != null) {
+        getMe()
+            .then(response => {
+                localStorage.setItem("userId", response.id);
+            }).catch(error => {
+                localStorage.removeItem("accessToken");
+                console.error(error);
+        })
+    }
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="*" element={<MainWorksPage/>}/>
+                <Route path="login" element={<UserAuthorization/>}/>
+                <Route path="signup" element={<UserRegistration/>}/>
+                <Route path="profile/create" element={<UserProfileCreate/>}/>
+                <Route path="profile/:id" element={<AccountPage/>}/>
+                <Route path="auto/my-page/create-work" element={<CreateWorkPage/>}/>
+                <Route path="project/:id" element={<ProjectPage/>}/>
 
-      </Routes>
-    </BrowserRouter>
-  );
+            </Routes>
+        </BrowserRouter>
+    );
 };
 
 export default App
