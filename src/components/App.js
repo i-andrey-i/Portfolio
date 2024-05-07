@@ -7,18 +7,20 @@ import UserRegistration from "./UserRegistration";
 import UserAuthorization from "./UserAuthorization";
 import CreateWorkPage from "./CreateWorkPage";
 import EachWorkPage from "./EachWorkPage";
+import UserRegInformation from "./UserRegInformation";
 
 const App = () => {
   
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="*" element={<UserAuthorization/>} />
-        <Route path="reg" element={<UserRegistration/>} />
-        <Route path="main" element={<MainWorksPage/>} />
-        <Route path="main/my-page" element={<MyAccountPage/>} />
-        <Route path="main/my-page/create-work" element={<CreateWorkPage/>} />
-        <Route path="main/each-work" element={<EachWorkPage/>} />
+        <Route path="*" element={<MainWorksPage/>} />
+        <Route path="auto" element={<UserAuthorization/>} />
+        <Route path="auto/reg" element={<UserRegistration/>} />
+        <Route path="auto/reg/inf" element={<UserRegInformation/>} />
+        <Route path="auto/my-page" element={<MyAccountPage/>} />
+        <Route path="auto/my-page/create-work" element={<CreateWorkPage/>} />
+        <Route path="each-work" element={<EachWorkPage/>} />
 
       </Routes>
     </BrowserRouter>

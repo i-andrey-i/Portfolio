@@ -25,7 +25,7 @@ class InfoAboutProject extends React.Component {
                 <input class="new-page-info" type="text" placeholder="" name="one-line" size="40"></input>
             </section>
 
-            <Link to="/main/my-page"><section class="create-new-project">
+            <Link to="/auto/my-page"><section class="create-new-project">
                 <p class="new-page-text-create"> Сохранить проект </p>
             </section></Link>
         </div>

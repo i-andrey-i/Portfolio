@@ -19,9 +19,9 @@ class MainWorksPage extends React.Component {
 
             <section class="my-works-section" id="my-works-page">
                 <ul class="all-my-works">
-                  <li class="my-work-item"><Link to="/main/each-work"><EachWork/></Link></li>
-                  <li class="my-work-item"><Link to="/main/each-work"><EachWork/></Link></li>
-                  <li class="my-work-item"><Link to="/main/each-work"><EachWork/></Link></li>
+                  <li class="my-work-item"><Link to="/each-work"><EachWork/></Link></li>
+                  <li class="my-work-item"><Link to="/each-work"><EachWork/></Link></li>
+                  <li class="my-work-item"><Link to="/each-work"><EachWork/></Link></li>
                 </ul>
             </section>
         </main>
