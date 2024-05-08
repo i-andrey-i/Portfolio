@@ -41,7 +41,7 @@ const UserAuthorization = () => {
                     </form>
 
                     <p className="list-entry-text"> Еще не зарегистрированы? <Link
-                        to="/auto/reg"> Зарегистрируйтесь</Link></p>
+                        to="/signup"> Зарегистрируйтесь</Link></p>
                 </center>
 
             </div>

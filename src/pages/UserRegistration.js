@@ -30,9 +30,9 @@ const UserRegistration = () => {
                                onChange={(e) => setEmail(e.target.value)} placeholder="Эл. адрес"></input>
                         <input className="list-entry-input" type="password" name="email" value={password}
                                onChange={(e) => setPassword(e.target.value)} placeholder="Пароль"></input>
-                        <Link to="/auto/reg/inf" class="list-entry-next" type="submit">Продолжить</Link>
+                        <Link to="/profile/create" class="list-entry-next" type="submit">Продолжить</Link>
                     </form>
-                    <p className="list-entry-text"> Уже зарегистрированы? <Link to="/auto">Войдите</Link> в систему</p>
+                    <p className="list-entry-text"> Уже зарегистрированы? <Link to="/login">Войдите</Link> в систему</p>
                 </center>
             </div>
         </center>
