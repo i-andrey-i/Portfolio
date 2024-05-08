@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react"
 import ProjectCard from "./ProjectCard"
-import poster from "./img/name.png";
+import poster from "../img/name.png";
 import {getUserProjects} from "../api/ProjectApi";
 
 const AccountWorksList = props => {

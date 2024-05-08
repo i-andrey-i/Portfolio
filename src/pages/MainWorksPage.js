@@ -1,6 +1,6 @@
 import React from "react";
-import ProjectCard from "./ProjectCard";
-import Header from "./Header";
+import ProjectCard from "../components/ProjectCard";
+import Header from "../components/Header";
 import {Link} from 'react-router-dom';
 
 const MainWorksPage = () => (

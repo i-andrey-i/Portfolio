@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
-import icon2 from "./img/user-icon-2.png";
-import phone from "./img/phone.png";
-import mail from "./img/mail.png";
-import vk from "./img/vk.png";
+import icon2 from "../img/user-icon-2.png";
+import phone from "../img/phone.png";
+import mail from "../img/mail.png";
+import vk from "../img/vk.png";
 import {getProfile} from "../api/ProfileApi";
 
 const AccountInformation = props => {

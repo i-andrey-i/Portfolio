@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "./Header"
-import AccountInformation from "./AccountInformation";
-import AccountMenu from "./AccountMenu";
-import AccountWorksList from "./AccountWorksList";
+import Header from "../components/Header"
+import AccountInformation from "../components/AccountInformation";
+import AccountMenu from "../components/AccountMenu";
+import AccountWorksList from "../components/AccountWorksList";
 import {useParams} from "react-router-dom";
 
 const AccountPage = () => {

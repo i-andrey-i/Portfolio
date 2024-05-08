@@ -1,6 +1,6 @@
 import React from "react";
-import workIMG from "./img/img-test.png";
-import user from "./img/image 1 (1).png";
+import workIMG from "../img/img-test.png";
+import user from "../img/image 1 (1).png";
 
 const ProjectCard = props => {
     return (

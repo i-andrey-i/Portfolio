@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "./Header";
-import InfoAboutProject from "./InfoAboutProject";
-import PicAboutProject from "./PicAboutProject";
+import Header from "../components/Header";
+import InfoAboutProject from "../components/InfoAboutProject";
+import PicAboutProject from "../components/PicAboutProject";
 
 const CreateWorkPage = () => (
     <div>

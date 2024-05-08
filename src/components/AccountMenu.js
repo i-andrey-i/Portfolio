@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-import dec1 from "./img/decor-1.png";
-import dec2 from "./img/decor-2.png";
+import dec1 from "../img/decor-1.png";
+import dec2 from "../img/decor-2.png";
 
 const AccountMenu = () => (
     <div className="right-section">
