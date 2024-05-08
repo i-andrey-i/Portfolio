@@ -1,6 +1,5 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-import {ReactComponent as Loupe} from "../img/Loupe.svg";
 import {ReactComponent as Logo} from "../img/Logo.svg";
 import {ReactComponent as ProfileIcon} from "../img/profileIcon.svg";
 import {ReactComponent as DropdownArrow} from "../img/dropdownArrow.svg";
