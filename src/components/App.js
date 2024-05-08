@@ -12,15 +12,6 @@ import {getMe} from "../api/AuthApi";
 
 const App = () => {
     const token = localStorage.getItem("accessToken");
-    if (token != null) {
-        getMe()
-            .then(response => {
-                localStorage.setItem("userId", response.id);
-            }).catch(error => {
-                localStorage.removeItem("accessToken");
-                console.error(error);
-        })
-    }
     return (
         <BrowserRouter>
             <Routes>
