@@ -1,0 +1,63 @@
+.navigation {
+    padding: 16px 64px 16px 64px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigationItems .navItem {
+    display: inline-block;
+    padding: 0 16px 0 16px;
+}
+
+.mainLogo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    font-weight: 700;
+    font-size: 24px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.buttonWithIcon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px 8px 16px;
+    border-radius: 64px;
+    font-weight: 600;
+    gap: 16px;
+}
+
+.profileButton {
+    background: linear-gradient(#B275FF 1%, #7B37D2 100%);
+    box-shadow: 0 8px 32px #DE7EF6;
+    color: #FFFFFF;
+}
+
+.searchWithIcon.loupe .input {
+    background-image: url('../img/Loupe.svg');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    background-color: #8AB1EB;
+    box-sizing: border-box;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    width: 100%;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.link.navItem p{
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.link.navItem a{
+    text-decoration-color: #FFFFFF;
+    text-underline-offset: 4px;
+}
