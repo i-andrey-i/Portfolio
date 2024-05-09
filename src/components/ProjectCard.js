@@ -6,7 +6,7 @@ const ProjectCard = props => {
     return (
         <a href="#">
             <div className="user-info">
-                <img src={user} alt="" width="38" height="38"/>
+                <img class="user-info-img" src={user} alt="" />
                 <p className="name-user">{props.username}</p>
             </div>
             <p className="title-of-my-work">{props.title}</p>

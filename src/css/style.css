@@ -298,6 +298,10 @@ button{
     border-radius: 21px;
 }
 
+.user-info-img{
+    width:10%;
+    height:10%;
+}
 .title-of-my-work{
     width: 40%;
     height: 40%;
