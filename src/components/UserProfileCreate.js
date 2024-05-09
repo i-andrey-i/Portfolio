@@ -29,7 +29,7 @@ const UserProfileCreate = () => {
             <input className="list-entry-input" type="text" name="study" value={study} onChange={(e) => setStudy(e.target.value)} placeholder="Учебное заведение" ></input>
             <input className="list-entry-input" type="number" name="phone" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Номер телефона" ></input>
             <input className="list-entry-input" type="text" name="vk" value={vK} onChange={(e) => setVK(e.target.value)} placeholder="VK" ></input>
-            <Link to="/auto/my-page"  class="list-entry-next" type="submit"> Готово </Link>
+            <Link to="/profile/:id"  class="list-entry-next" type="submit"> Готово </Link>
           </form>
         </center>
       </div></center>

@@ -17,9 +17,9 @@ const MainWorksPage = () => (
 
             <section className="my-works-section" id="my-works-page">
                 <ul className="all-my-works">
-                    <li className="my-work-item"><Link to="/each-work"><ProjectCard/></Link></li>
-                    <li className="my-work-item"><Link to="/each-work"><ProjectCard/></Link></li>
-                    <li className="my-work-item"><Link to="/each-work"><ProjectCard/></Link></li>
+                    <li className="my-work-item"><Link to="/project/:id"><ProjectCard/></Link></li>
+                    <li className="my-work-item"><Link to="/project/:id"><ProjectCard/></Link></li>
+                    <li className="my-work-item"><Link to="/project/:id"><ProjectCard/></Link></li>
                 </ul>
             </section>
         </main>

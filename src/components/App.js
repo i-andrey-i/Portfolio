@@ -21,6 +21,7 @@ const App = () => {
                 console.error(error);
         })
     }
+
     return (
         <BrowserRouter>
             <Routes>

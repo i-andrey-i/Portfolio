@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <header>
             <nav className="navigation">
-                <Link to="/" class="logo"><img src={logo} alt="" width="230" height="60"/></Link>
+                <Link to="/" class="logo"><img src={logo} alt="" /></Link>
 
                 <ul className="navigation-items">
                     <li className="search"><input className="input" type="text" placeholder="Поиск" name="one-line"

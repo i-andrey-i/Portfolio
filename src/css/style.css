@@ -17,35 +17,36 @@ radial-gradient(54.92% 54.92% at 38.54% 80.1%, rgba(178, 118, 255, 0.79) 0%, rgb
     display:flex;
     align-items: center;
     margin: 0;
-    margin-top:40px;
-    margin-left: 130px;
-    margin-right: 130px;
-    margin-bottom: 20px;
+    margin-top: 5% ;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
     width: auto;
-
 }
 
 .logo{
-    margin-left: 10px;
+    margin-left: 1%;
     display:block;
-
+    width: 33%;
 }
 
 .navigation-items{
-    width: 600px;
+    padding: 0;
+    width: 40%;
     display: flex;
-    gap: 30px;
+    gap: 2%;
     list-style: none;
-    margin-left: 77px;
+    margin-left: 2%;
 }
 
 .search{
     margin: 0;
+    margin-top: 2%;
 }
 
 .input{
-    width: 190px ;
-    height: 27px;
+    width: 100%;
+    height: 70%;
     background-color: #8AB1EB;
     border-radius: 10px;
     border: none;
@@ -53,8 +54,8 @@ radial-gradient(54.92% 54.92% at 38.54% 80.1%, rgba(178, 118, 255, 0.79) 0%, rgb
 
 .link{
     margin: 0;
-    margin-left: 30px;
-    width: 100px;
+    margin-left: 2%;
+    width: 30%;
     text-align: center;
 }
 
@@ -67,28 +68,27 @@ a{
 }
 
 .profile-link{
-    width: 227px;
+    width: 23%;
     height: 60px;
     background: linear-gradient(105.22deg, #B275FF 21.28%, #7B37D2 77.65%);
     border-radius: 189px;
     margin: 0;   
     display: flex;
     align-items: center;
-    margin-right: 10px;
-    margin-left: auto;
+    margin-right: 2%;
 }
 
 .img-profile-link{
     margin: 0;
-    margin-left: 12px;
+    margin-left: 5%;
 }
 
 .profile-link-text{
     margin: 0;
-    margin-left: 12px;
+    margin-left: 5%;
     color: #FFFFFF;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 100%;
     line-height: 19.5px;
 }
 
@@ -270,20 +270,20 @@ button{
 
 .my-works-section{
     margin: 0;
-    margin-top:40px;
-    margin-left: 130px;
-    margin-right: 135px;
+    margin-top:5%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 
 .all-my-works{
     display: flex;
-    column-gap: 130px;
+    column-gap: 10%;
     row-gap: 25px;
     flex-wrap: wrap;
-    padding-top: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-top: 2%;
+    padding-left: 1%;
+    padding-right: 1%;
     justify-content: space-between;
 
 }
@@ -302,7 +302,7 @@ button{
     width: 40%;
     height: 40%;
     margin-top: 6px;
-    padding-left:25px;
+    padding-left:5%;
     font-weight: 500;
     font-size: 17px;
     line-height: 21px;
@@ -310,14 +310,13 @@ button{
 }
 
 .img-of-work{
-    padding-left:25px;
-    margin-right: 60px;
+    padding-left:5%;
     width:90%;
     height: 10%;
 }
 
 .description{
-    padding-left:25px;
+    padding-left:5%;
     width: 60%;
     height: 80%;
     font-weight: 300;
@@ -327,7 +326,7 @@ button{
 }
 
 .date{
-    padding-left:25px;
+    padding-left:10%;
     width: 40%;
     height: 40%;
     font-weight: 400;
@@ -370,11 +369,11 @@ button{
 }
 
 .user-info{
-    padding-left:40px;
+    padding-left:5%;
     margin: 0;
-    margin-top: 22px;
+    margin-top: 3%;
     display: flex;
-    gap: 16px;
+    gap: 5%;
     border-bottom: 1px solid rgba(138, 177, 235, 1)
 }
 
@@ -414,17 +413,19 @@ button{
     width: 70%;
     height: 30px;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 5%;
     background: rgba(211, 224, 245, 1);
     border-radius: 13px;
     border:none;
-    padding-left: 15px;
+    padding-left: 5%;
 }
 
 .list-entry-next{
     width: 50%;
     height: 40px;
-    margin-top: 40px;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 225px;
     
     display: flex;
@@ -444,7 +445,7 @@ button{
 }
 
 .list-entry-text{
-    margin-top: 15px;
+    margin-top: 5%;
     font-family: Montserrat;
     font-size: 13px;
     font-weight: 300;
@@ -495,6 +496,7 @@ button{
     border:none;
     padding-bottom: 2%;
     padding-left: 5%;
+    width: 90%;
     color: rgba(70, 70, 113, 1);
 
 }
