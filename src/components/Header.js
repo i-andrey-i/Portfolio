@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-import logo from "./img/logo.png";
-import icon from "./img/user-icon.png";
+import logo from "../img/logo.png";
+import icon from "../img/user-icon.png";
 
 const Header = () => {
     const userId = localStorage.getItem("userId");

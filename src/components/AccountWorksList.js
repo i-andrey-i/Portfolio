@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react"
 import ProjectCard from "./ProjectCard"
-import poster from "./img/name.png";
+import poster from "../img/name.png";
 import {getUserProjects} from "../api/ProjectApi";
 
 const AccountWorksList = props => {
@@ -27,8 +27,9 @@ const AccountWorksList = props => {
                 <ul className="all-my-works">
                     {/*<li className="my-work-item"><Link to="/each-work"><ProjectCard/></Link></li>*/}
                     {projects.map((project) => (
-                        <li className="my-work-item">
-                            <ProjectCard title={project.data.title} description={project.data.description}/>
+                        <li className="my-work-item" key={project.data.id}>
+                            <ProjectCard username={project.data.username} title={project.data.title}
+                                         description={project.data.description} created_at={project.data.created_at}/>
                         </li>
                     ))}
                 </ul>

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Link, useNavigate} from 'react-router-dom';
-import {authUser} from "../api/AuthApi";
+import {authUser, getMe} from "../api/AuthApi";
 
 const UserAuthorization = () => {
     const navigate = useNavigate();
@@ -11,11 +11,19 @@ const UserAuthorization = () => {
         e.preventDefault();
         // отправка данных на сервер и получение токенов
         const data = await authUser(email, password);
-        console.log(data);
-        // сохранение токенов в localStorage
-        localStorage.setItem('accessToken', data.access_token);
 
-        // перенаправление на нужную страницу
+        // сохранение токенов в localStorage
+        if (data.access_token != null) {
+            console.log("Saving data to localStorage");
+            localStorage.setItem('accessToken', data.access_token);
+
+            const userInfo = await getMe(); // TODO: Вся эта логика должна дублироваться для регистрации, возможно стоит вынести
+            if (userInfo.id != null) {
+                localStorage.setItem("userId", userInfo.id);
+            } else {
+                localStorage.removeItem("accessToken");
+            }
+        }
         navigate('/auto/my-page');
     }
 
