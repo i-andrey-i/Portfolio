@@ -7,7 +7,10 @@ import styles from "../css/Header.module.css";
 
 const Header = () => {
     const userId = localStorage.getItem("userId");
+    if (userId === "undefined") {
+        localStorage.removeItem("userId");
 
+    }
     return (
         <header>
             <nav className={styles.navigation}>
@@ -20,15 +23,10 @@ const Header = () => {
                     <li className={`${styles.searchWithIcon} ${styles.loupe} ${styles.navItem}`}>
                         <input className={`${styles.search} ${styles.input}`} type="text" placeholder="Поиск"></input>
                     </li>
-                    <li className={`${styles.link} ${styles.navItem}`}>
-                        <Link to="/"><p className={styles.linkText}>Главная</p></Link>
-                    </li>
-                    <li className={`${styles.link} ${styles.navItem}`}>
-                        <a href="#"><p className={styles.linkText}>Проекты</p></a>
-                    </li>
                 </ul>
 
-                <Link to={userId ? `/profile/${userId}` : "/login"} className={`${styles.buttonWithIcon} ${styles.profileButton}`}>
+                <Link to={userId && userId !== "undefined" ? `/profile/${userId}` : "/login"}
+                      className={`${styles.buttonWithIcon} ${styles.profileButton}`}>
                     <ProfileIcon width="42" height="42"/>
                     <p className=""> Мой профиль</p>
                     <DropdownArrow/>

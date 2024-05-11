@@ -17,3 +17,21 @@ export const getUserProjects = (id) => {
     })
         .catch(error => console.error(error));
 }
+
+export const getProjects = (offset = 0, limit = 10) => {
+    return fetch(`${BASE_URL}/projects/all?limit=${limit}&offset=${offset}`, {
+        ...createRequestConfig("GET")
+    }).then(response => {
+        return response.json()
+    })
+        .catch(error => console.error(error));
+}
+
+export const getNewestProjects = (offset = 0, limit = 10) => {
+    return fetch(`${BASE_URL}/projects/newest?limit=${limit}&offset=${offset}`, {
+        ...createRequestConfig("GET")
+    }).then(response => {
+        return response.json()
+    })
+        .catch(error => console.error(error));
+}

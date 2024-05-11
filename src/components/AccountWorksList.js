@@ -25,13 +25,9 @@ const AccountWorksList = props => {
             <center><img className="poster" src={poster} alt="Мои работы" width="366" height="237"/></center>
             {Array.isArray(projects) && (
                 <ul className="works-list">
-                    {/*<li className="my-work-item"><Link to="/each-work"><ProjectCard/></Link></li>*/}
                     {projects.map((project) => (
                         <li className="works-item" key={project.data.id}>
-                            <ProjectCard username={project.data.username} title={project.data.title}
-                                         description={project.data.description} created_at={project.data.created_at}
-                                         showUserInfo={false} likes_count={project.data.likes_count}
-                                         comments_count={project.data.comments_count}/>
+                            <ProjectCard showUserInfo={false} project={project}/>
                         </li>
                     ))}
                 </ul>

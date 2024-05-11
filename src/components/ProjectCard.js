@@ -6,31 +6,31 @@ import {ReactComponent as Comment} from "../img/Comment.svg";
 import {Link} from "react-router-dom";
 
 const ProjectCard = props => {
-    const {showUserInfo, user_id, username, title, description, created_at, likes_count, comments_count} = props;
-    const date = new Date(created_at);
+    const {project, showUserInfo} = props;
+    const date = new Date(project.data.created_at);
     const formattedDate = date.toLocaleDateString('ru-RU', {day: '2-digit', month: '2-digit', year: 'numeric'});
     return (
         <div className="project-card">
             {showUserInfo && (
-                <Link to={`/profile/${user_id}`}><div className="user-info">
+                <Link to={`/profile/${project.data.user_id}`}><div className="user-info">
 
                         <img src={user} alt="" width="38" height="38"/>
-                        <p className="username">{username}</p>
+                        <p className="username">{project.data.username}</p>
 
                 </div></Link>
             )}
             <div className="project-info">
-                <p className="project-title">{title}</p>
+                <p className="project-title">{project.data.title}</p>
                 <img className="project-preview" src={workIMG} alt="Изображение работы"/>
-                <p className="project-description">{description}</p>
+                <p className="project-description">{project.data.description}</p>
                 <div className="project-meta">
-                    <time className="project-created-at" dateTime={created_at}>{formattedDate}</time>
+                    <time className="project-created-at" dateTime={project.data.created_at}>{formattedDate}</time>
                     <div className="icon-with-text project-likes">
-                        <span>{likes_count}</span>
+                        <span>{project.data.likes_count}</span>
                         <ThumbUp className="icon"/>
                     </div>
                     <div className="icon-with-text project-comments">
-                        <span>{comments_count}</span>
+                        <span>{project.data.comments_count}</span>
                         <Comment className="icon"/>
                     </div>
                 </div>
