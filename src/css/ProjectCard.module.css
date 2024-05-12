@@ -1,0 +1,72 @@
+.projectCard {
+    overflow: hidden;
+    background-color: #FFFFFF;
+    width: 80%;
+    min-width: 500px;
+    max-width: 80vh;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.projectCard:first-child{
+    border-top-left-radius: 21px;
+    border-top-right-radius: 21px;
+}
+
+.projectCard:last-child{
+    border-bottom-left-radius: 21px;
+    border-bottom-right-radius: 21px;
+}
+
+.userInfo {
+    padding: 10px 36px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: #8AB1EB solid 1px;
+    font-weight: 400;
+    font-size: 16px;
+    gap: 16px;
+}
+
+.projectInfo {
+    padding: 16px 36px;
+}
+
+.projectTitle {
+    font-weight: 500;
+    font-size: 17px;
+    margin: 0 0 16px 0;
+}
+
+.projectPreview {
+    margin: 0 auto;
+}
+
+.projectDescription {
+    font-weight: 300;
+    font-size: 16px;
+    color: #262626;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-wrap: anywhere;
+}
+
+.projectMeta {
+    display: flex;
+    align-items: center;
+}
+
+.projectCreatedAt {
+    margin-right: auto;
+}
+
+.iconWithText {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px;
+}

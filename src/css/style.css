@@ -65,78 +65,7 @@ li.works-item {
 
 /* ProjectCard */
 
-.project-card {
-    overflow: hidden;
-    background-color: #FFFFFF;
-    width: 80%;
-    min-width: 500px;
-    max-width: 80vh;
-    margin: 0 auto;
-    height: 100%;
-}
 
-.project-card:first-child{
-    border-top-left-radius: 21px;
-    border-top-right-radius: 21px;
-}
-
-.project-card:last-child{
-    border-bottom-left-radius: 21px;
-    border-bottom-right-radius: 21px;
-}
-
-.user-info {
-    padding: 10px 36px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-bottom: #8AB1EB solid 1px;
-    font-weight: 400;
-    font-size: 16px;
-    gap: 16px;
-}
-
-.project-info {
-    padding: 16px 36px;
-}
-
-.project-title {
-    font-weight: 500;
-    font-size: 17px;
-    margin: 0 0 16px 0;
-}
-
-.project-preview {
-    margin: 0 auto;
-}
-
-.project-description {
-    font-weight: 300;
-    font-size: 16px;
-    color: #262626;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    overflow-wrap: anywhere;
-}
-
-.project-meta {
-    display: flex;
-    align-items: center;
-}
-
-.project-created-at {
-    margin-right: auto;
-}
-
-.icon-with-text {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-left: 10px;
-}
 
 
 

@@ -4,32 +4,35 @@ import user from "../img/image 1 (1).png";
 import {ReactComponent as ThumbUp} from "../img/ThumbUp.svg";
 import {ReactComponent as Comment} from "../img/Comment.svg";
 import {Link} from "react-router-dom";
+import styles from "../css/ProjectCard.module.css"
 
 const ProjectCard = props => {
     const {project, showUserInfo} = props;
     const date = new Date(project.data.created_at);
     const formattedDate = date.toLocaleDateString('ru-RU', {day: '2-digit', month: '2-digit', year: 'numeric'});
     return (
-        <div className="project-card">
+        <div className={styles.projectCard}>
             {showUserInfo && (
-                <Link to={`/profile/${project.data.user_id}`}><div className="user-info">
+                <Link to={`/profile/${project.data.user_id}`}>
+                    <div className={styles.userInfo}>
 
                         <img src={user} alt="" width="38" height="38"/>
-                        <p className="username">{project.data.username}</p>
+                        <p className={styles.username}>{project.data.username}</p>
 
-                </div></Link>
+                    </div>
+                </Link>
             )}
-            <div className="project-info">
-                <p className="project-title">{project.data.title}</p>
-                <img className="project-preview" src={workIMG} alt="Изображение работы"/>
-                <p className="project-description">{project.data.description}</p>
-                <div className="project-meta">
-                    <time className="project-created-at" dateTime={project.data.created_at}>{formattedDate}</time>
-                    <div className="icon-with-text project-likes">
+            <div className={styles.projectInfo}>
+                <p className={styles.projectTitle}>{project.data.title}</p>
+                <img className={styles.projectPreview} src={workIMG} alt="Изображение работы"/>
+                <p className={styles.projectDescription}>{project.data.description}</p>
+                <div className={styles.projectMeta}>
+                    <time className={styles.projectCreatedAt} dateTime={project.data.created_at}>{formattedDate}</time>
+                    <div className={`${styles.iconWithText} ${styles.projectLikes}`}>
                         <span>{project.data.likes_count}</span>
                         <ThumbUp className="icon"/>
                     </div>
-                    <div className="icon-with-text project-comments">
+                    <div className={`${styles.iconWithText} ${styles.projectComments}`}>
                         <span>{project.data.comments_count}</span>
                         <Comment className="icon"/>
                     </div>
