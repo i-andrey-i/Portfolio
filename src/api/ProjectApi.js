@@ -35,3 +35,21 @@ export const getNewestProjects = (offset = 0, limit = 10) => {
     })
         .catch(error => console.error(error));
 }
+
+export const likeProject = (project_id) => {
+    return fetch(`${BASE_URL}/projects/add_like?project_id=${project_id}`, {
+        ...createRequestConfig("POST")
+    }).then(response => {
+        return response.json()
+    })
+        .catch(error => console.error(error));
+}
+
+export const unlikeProject = (project_id) => {
+    return fetch(`${BASE_URL}/projects/delete_like?project_id=${project_id}`, {
+        ...createRequestConfig("DELETE")
+    }).then(response => {
+        return response.json()
+    })
+        .catch(error => console.error(error));
+}
