@@ -1,0 +1,49 @@
+ul.filtersList {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style-type: none;
+    background: radial-gradient(rgba(178, 118, 255, 0.68) 0%, rgba(143, 78, 227, 0.68) 100%); /* немного костыль для прозрачности */
+    width: fit-content;
+    margin: 16px auto;
+    padding: 0;
+    border-radius: 28px;
+}
+
+ul.filtersList li.filtersItem:first-child {
+    border-right: #FFFFFF solid 1px;
+}
+
+ul.filtersList li.filtersItem:last-child {
+    border-left: #FFFFFF solid 1px;
+}
+
+li.filtersItem {
+    font-weight: 600;
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 12px 24px;
+}
+
+button.filtersButton {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+ul.worksList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+}
+
+li.worksItem {
+    flex-basis: 45%;
+    margin: 10px;
+}

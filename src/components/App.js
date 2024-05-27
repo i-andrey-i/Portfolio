@@ -20,7 +20,7 @@ const App = () => {
                 <Route path="signup" element={<UserRegistration/>}/>
                 <Route path="profile/create" element={<UserProfileCreate/>}/>
                 <Route path="profile/:id" element={<AccountPage/>}/>
-                <Route path="auto/my-page/create-work" element={<CreateWorkPage/>}/>
+                <Route path="project/create" element={<CreateWorkPage/>}/>
                 <Route path="project/:id" element={<ProjectPage/>}/>
 
             </Routes>

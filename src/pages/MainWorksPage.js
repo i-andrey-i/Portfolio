@@ -3,6 +3,7 @@ import ProjectCard from "../components/ProjectCard";
 import Header from "../components/Header";
 import {Link} from 'react-router-dom';
 import {getNewestProjects, getProjects, getUserProjects} from "../api/ProjectApi";
+import styles from "../css/MainWorksPage.module.css"
 
 const MainWorksPage = () => {
     const [projects, setProjects] = useState(null);
@@ -35,24 +36,24 @@ return (
     <div>
         <Header/>
         <main>
-            <ul className="filters-list">
-                <li className="filters-item">
-                    <button className="filters-button" id="all-projects" onClick={handleFilter}>Все проекты</button>
+            <ul className={styles.filtersList}>
+                <li className={styles.filtersItem}>
+                    <button className={styles.filtersButton} id="all-projects" onClick={handleFilter}>Все проекты</button>
                 </li>
-                <li className="filters-item">
-                    <button className="filters-button" id="subscribed-projects" onClick={handleFilter}>Подписки
+                <li className={styles.filtersItem}>
+                    <button className={styles.filtersButton} id="subscribed-projects" onClick={handleFilter}>Подписки
                     </button>
                 </li>
-                <li className="filters-item">
-                    <button className="filters-button" id="newest-projects" onClick={handleFilter}>Новые проекты
+                <li className={styles.filtersItem}>
+                    <button className={styles.filtersButton} id="newest-projects" onClick={handleFilter}>Новые проекты
                     </button>
                 </li>
             </ul>
 
-            <section className="works-section" id="my-works-page">
-                <ul className="works-list">
+            <section className={styles.worksSection} id="my-works-page">
+                <ul className={styles.worksList}>
                     {projects.map((project) => (
-                        <li className="works-item" key={project.data.id}>
+                        <li className={styles.worksItem} key={project.data.id}>
                             <ProjectCard showUserInfo={true} project={project}/>
                         </li>
                     ))}
