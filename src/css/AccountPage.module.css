@@ -1,0 +1,6 @@
+article.TwoSections {
+    padding: 64px 64px 0;
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+}

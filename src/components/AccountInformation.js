@@ -1,82 +1,73 @@
 import React, {useEffect, useState} from "react";
-import icon2 from "../img/user-icon-2.png";
-import phone from "../img/phone.png";
-import mail from "../img/mail.png";
-import vk from "../img/vk.png";
-import {getProfile} from "../api/ProfileApi";
+import styles from "../css/AccountInformation.module.css";
+import {ReactComponent as PhoneIcon} from "../img/phoneIcon.svg";
+import {ReactComponent as EmailIcon} from "../img/emailIcon.svg";
 
 const AccountInformation = props => {
-    const [profileInfo, setProfileInfo] = useState(null);
 
-    useEffect(() => {
-        getProfile(props.id)
-            .then((data) => {
-                setProfileInfo(data);
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    }, [props.id]);
-
-    if (!profileInfo) {
-        return <div>Loading...</div>;
-    }
-
-    // TODO: инпуты поменяем на просто текст, изменение унесем куда-нибудь
     return (
-        <section className="main-information-section" id="main-section-page">
-            <div className="user">
-                <img src={icon2} alt="" width="77" height="80"/>
-                <p className="user-name">{profileInfo.data.name}</p>
+        <div className={styles.MainBlock}>
+            <div className={styles.InfoHeader}>
+                <div className={styles.PictureName}>
+                    <img src="../img/user-icon-2.png"/>
+                    <p>{props.profileInfo.data.name}</p>
+                </div>
+                <ul className={styles.Counters}>
+                    <li className={styles.Counter}>
+                        <p>Подписчики</p>
+                        <p>{props.profileInfo.data.projects_count}</p>
+                    </li>
+                    <li className={styles.Counter}>
+                        <p>Публикации</p>
+                        <p>{props.profileInfo.data.projects_count}</p>
+                    </li>
+                </ul>
             </div>
-            <ul className="information-items">
-                <li className="information-item-title">
-                    <p className="information-text">Город:</p>
-                    <input className="input-information" type="text" value={"NO_CITY"} disabled={!profileInfo.can_edit}
-                           name="one-line" size="20"></input>
-                </li>
-                <li className="information-item-title">
-                    <p className="information-text">Учебное заведение:</p>
-                    <input className="input-information" type="text" value={profileInfo.data.education}
-                           disabled={!profileInfo.can_edit} name="one-line"
-                           size="20"></input>
-                </li>
-                <li className="information-item-description">
-                    <p className="information-text">Описание:</p>
-                    <textarea className="input-information-ds" value={profileInfo.data.description}
-                              disabled={!profileInfo.can_edit} rows="5"></textarea>
-                </li>
-
-                <li className="information-item-contacts">
-                    <p className="information-text">Контакты:</p>
-                    <div className="contact">
-                        <img className="contact-img" src={phone} alt="" width="24" height="24"/>
-                        <input className="input-information-contact" type="text" value={profileInfo.data.phone_number}
-                               disabled={!profileInfo.can_edit} name="one-line"
-                               size="20"></input>
-                    </div>
-
-                    <div className="contact">
-                        <img className="contact-img" src={mail} alt="" width="24" height="24"/>
-                        <input className="input-information-contact" type="text" value={profileInfo.data.email}
-                               disabled={!profileInfo.can_edit} name="one-line"
-                               size="20"></input>
-                    </div>
-
-                    <div className="contact">
-                        <img className="contact-img" src={vk} alt="" width="24" height="24"/>
-                        <input className="input-information-contact" type="text" disabled={!profileInfo.can_edit}
-                               name="one-line"
-                               size="20"></input>
-                    </div>
-                </li>
-            </ul>
-            {profileInfo.can_edit && (
-                <button>
-                    <p className="information-item-change">Изменить</p>
-                </button>
-            )}
-        </section>
+            <div className={styles.ProfileInfo}>
+                <ul className={styles.Fields}>
+                    {props.profileInfo.data.city && (
+                        <li>
+                            <p>Город:</p>
+                            <p>{props.profileInfo.data.city}</p>
+                        </li>
+                    )}
+                    {props.profileInfo.data.education && (
+                        <li>
+                            <p>Учебное заведение:</p>
+                            <p>{props.profileInfo.data.education}</p>
+                        </li>
+                    )}
+                    {props.profileInfo.data.description && (
+                        <li>
+                            <p>Описание:</p>
+                            <p>{props.profileInfo.data.description}</p>
+                        </li>
+                    )}
+                </ul>
+                <div className={styles.ContactsBlock}>
+                    <p>Контакты:</p>
+                    <ul className={styles.Contacts}>
+                        {props.profileInfo.data.phone_number && (
+                            <li>
+                                <PhoneIcon/>
+                                <p>{props.profileInfo.data.phone_number}</p>
+                            </li>
+                        )}
+                        {props.profileInfo.data.email && (
+                            <li>
+                                <EmailIcon/>
+                                <p>{props.profileInfo.data.email}</p>
+                            </li>
+                        )}
+                    </ul>
+                </div>
+            </div>
+            <div className={styles.ButtonBottom}>
+                {props.profileInfo.can_edit && (
+                    <button className={styles.Change}>Изменить</button>
+                )}
+            </div>
+        </div>
     )
 };
 
