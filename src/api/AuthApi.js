@@ -1,6 +1,6 @@
 import {BASE_URL, createRequestConfig} from "./BaseApi";
 
-export const registerUser = (email, password) => {
+export const registerUser = ({email, password}) => {
     return fetch(`${BASE_URL}/auth/register`, {
         ...createRequestConfig("POST"),
         body: JSON.stringify({email, password})

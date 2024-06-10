@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import {Link, useNavigate} from 'react-router-dom';
 import {authUser, getMe} from "../api/AuthApi";
 import {useForm} from "react-hook-form";
@@ -14,17 +14,16 @@ const UserAuthorization = () => {
             .then(data => {
                 if (data.access_token != null) {
                     localStorage.setItem('accessToken', data.access_token);
-                }
-            })
-            .catch(error => console.log(error));
-
-        getMe()
-            .then(data => {
-                if (data.id != null) {
-                    localStorage.setItem("userId", data.id);
-                    navigate(`/profile/${data.id}`);
-                } else {
-                    localStorage.removeItem("accessToken");
+                    getMe()
+                        .then(data => {
+                            if (data.id != null) {
+                                localStorage.setItem("userId", data.id);
+                                navigate(`/profile/${data.id}`);
+                            } else {
+                                localStorage.removeItem("accessToken");
+                            }
+                        })
+                        .catch(error => console.log(error));
                 }
             })
             .catch(error => console.log(error));

@@ -9,7 +9,7 @@ export const getProfile = (id) => {
         .catch(error => console.error(error));
 }
 
-export const createProfile = (name, education, description, phone_number, email) => { // TODO: как в updateProfile
+export const createProfile = ({name, education, description, phone_number, email}) => { // TODO: как в updateProfile
     return fetch(`${BASE_URL}/profiles/create`, {
         ...createRequestConfig("POST"),
         body: JSON.stringify({name, education, description, phone_number, email})

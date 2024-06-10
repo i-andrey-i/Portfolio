@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import React from "react";
 import {Link, useNavigate} from 'react-router-dom';
-import {registerUser} from "../api/AuthApi";
+import {getMe, registerUser} from "../api/AuthApi";
 import styles from "../css/Form.module.css";
 import {Form} from "../components/Form";
 import {useForm} from "react-hook-form";
@@ -8,26 +8,31 @@ import {useForm} from "react-hook-form";
 const UserRegistration = () => {
     const {register, handleSubmit} = useForm();
     const navigate = useNavigate();
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
 
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-    //     // отправка данных на сервер и получение токенов
-    //     const data = await registerUser(email, password);
-    //
-    //     console.log(data);
-    //     // сохранение токенов в localStorage
-    //     localStorage.setItem('accessToken', data.access_token);
-    //
-    //     // перенаправление на нужную страницу
-    //     navigate('profile/create');
-    // }
+    const onSubmit = (formData) => {
+        registerUser(formData)
+            .then(data => {
+                if (data.access_token != null) {
+                    localStorage.setItem('accessToken', data.access_token);
+                    getMe()
+                        .then(data => {
+                            if (data.id != null) {
+                                localStorage.setItem("userId", data.id);
+                                navigate("/profile/create");
+                            } else {
+                                localStorage.removeItem("accessToken");
+                            }
+                        })
+                        .catch(error => console.log(error));
+                }
+            })
+            .catch(error => console.log(error));
+    };
 
     return (
         <div className={styles.FormPage}>
             <div className={styles.FormContainer}>
-                <Form title={"Регистрация"} buttonText={"Продолжить"} onSubmit={handleSubmit()}>
+                <Form title={"Регистрация"} buttonText={"Продолжить"} onSubmit={handleSubmit(onSubmit)}>
                     <input className={styles.FormField} placeholder={"Email"}
                            {...register("email")}/>
                     <input type={"password"} className={styles.FormField} placeholder={"Пароль"}
