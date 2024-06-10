@@ -2,8 +2,23 @@ import React, {useEffect, useState} from "react";
 import styles from "../css/AccountInformation.module.css";
 import {ReactComponent as PhoneIcon} from "../img/phoneIcon.svg";
 import {ReactComponent as EmailIcon} from "../img/emailIcon.svg";
+import {Modal} from "./Modal";
+import {EditModal} from "./EditModal";
 
 const AccountInformation = props => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(
+        () => {
+            if (isOpen) {
+                document.body.style.overflowY = "hidden";
+            }
+            else {
+                document.body.style.overflowY = "scroll";
+            }
+        },
+        [isOpen]
+    );
 
     return (
         <div className={styles.MainBlock}>
@@ -11,6 +26,7 @@ const AccountInformation = props => {
                 <div className={styles.PictureName}>
                     <img src="../img/user-icon-2.png"/>
                     <p>{props.profileInfo.data.name}</p>
+                    {!props.profileInfo.can_edit && (<button className={styles.SubscribeButton}>Подписаться</button>)}
                 </div>
                 <ul className={styles.Counters}>
                     <li className={styles.Counter}>
@@ -64,9 +80,10 @@ const AccountInformation = props => {
             </div>
             <div className={styles.ButtonBottom}>
                 {props.profileInfo.can_edit && (
-                    <button className={styles.Change}>Изменить</button>
+                    <button className={styles.Change} onClick={() => setIsOpen(true)}>Изменить</button>
                 )}
             </div>
+            <EditModal isOpen={isOpen} onClose={() => setIsOpen(false)} profileInfo={props.profileInfo.data} />
         </div>
     )
 };

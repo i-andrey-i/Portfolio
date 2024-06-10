@@ -8,14 +8,8 @@
     height: 100%;
 }
 
-.projectCard:first-child{
-    border-top-left-radius: 21px;
-    border-top-right-radius: 21px;
-}
-
-.projectCard:last-child{
-    border-bottom-left-radius: 21px;
-    border-bottom-right-radius: 21px;
+.projectCard{
+    border-radius: 21px;
 }
 
 .userInfo {

@@ -1,0 +1,46 @@
+.Form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.FormTitle {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #4176D2;
+}
+
+.FormField {
+    background-color: #D3E0F5;
+    border-radius: 13px;
+    border: none;
+    color: #8199C0;
+    padding: 12px;
+    width: 80%;
+    align-self: center;
+    font-size: 16px;
+    resize: none;
+}
+
+.BigFormField {
+    min-height: 200px;
+}
+
+.FormButton {
+    background: linear-gradient(103.69deg, #E2A4FF 16.17%, #9450B4 89.17%);
+    box-shadow: 0 4px 8px #E2A4FF;
+    border-radius: 225px;
+    border: none;
+    color: #FFFFFF;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: 400;
+    width: 20%;
+    align-self: center;
+    cursor: pointer;
+}
+
+.FormButton:active {
+    transform: translateY(1px);
+}

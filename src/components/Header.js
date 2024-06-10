@@ -7,12 +7,13 @@ import {ReactComponent as LoginIcon} from "../img/LoginIcon.svg";
 import {ReactComponent as LogoutIcon} from "../img/LogoutIcon.svg";
 import {ReactComponent as AddPostIcon} from "../img/AddPostIcon.svg";
 import styles from "../css/Header.module.css";
+import {getMe} from "../api/AuthApi";
 
 const Header = () => {
     const navigate = useNavigate();
 
     const logout = () => {
-        localStorage.removeItem("token");
+        localStorage.removeItem("accessToken");
         localStorage.removeItem("userId");
         window.location.reload(); // TODO: Может быть придумать чета получше
     }
@@ -23,6 +24,13 @@ const Header = () => {
     if (userId === "undefined") {
         logout();
     }
+
+    getMe()
+        .then(data => {
+            if (localStorage.getItem("accessToken") && data.detail === "Could not validate credentials") {
+                logout();
+            }
+        });
 
     return (
         <header>
@@ -48,7 +56,10 @@ const Header = () => {
                     {isAuthorised &&
                         <ul className={styles.dropdownContent}>
                             <li>
-                                <button onClick={() => navigate("/project/create")}><AddPostIcon width="21" height="21"/>Новый проект</button>
+                                <button onClick={() => navigate("/project/create")}><AddPostIcon width="21"
+                                                                                                 height="21"/>Новый
+                                    проект
+                                </button>
                             </li>
                             <li>
                                 <button onClick={() => logout()}><LogoutIcon width="21" height="21"/>Выйти</button>

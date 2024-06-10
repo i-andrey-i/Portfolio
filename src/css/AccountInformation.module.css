@@ -121,3 +121,15 @@ button.Change {
 button.Change:active {
     transform: translateY(1px);
 }
+
+button.SubscribeButton {
+    margin-left: auto;
+    background: linear-gradient(103.69deg, #E2A4FF 16.17%, #9450B4 89.17%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 32px;
+    padding: 16px;
+    border: none;
+    color: #FFFFFF;
+    font-size: 16px;
+    cursor: pointer;
+}
