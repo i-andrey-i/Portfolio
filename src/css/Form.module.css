@@ -1,7 +1,27 @@
+.FormPage {
+    display: flex;
+    width: 99%;
+    height: 99vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.FormContainer {
+    border-radius: 32px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    padding: 40px;
+}
+
 .Form {
     display: flex;
     flex-direction: column;
     gap: 32px;
+    width: 100%;
 }
 
 .FormTitle {
@@ -43,4 +63,11 @@
 
 .FormButton:active {
     transform: translateY(1px);
+}
+
+.DownText {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
 }

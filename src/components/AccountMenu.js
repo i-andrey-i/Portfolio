@@ -1,9 +1,8 @@
 import React from "react";
-import {ReactComponent as HomeIcon} from "../img/homeIcon.svg";
-import {ReactComponent as ProjectsIcon} from "../img/projectsIcon.svg";
 import styles from "../css/AccountMenu.module.css"
 import {logout} from "../api/Utils";
 import {useNavigate} from "react-router-dom";
+import {BusinessCenterSharp, HomeOutlined} from "@mui/icons-material";
 
 const AccountMenu = props => {
     const navigate = useNavigate();
@@ -13,11 +12,11 @@ const AccountMenu = props => {
             <div className={styles.MainContainer}>
                 <ul className={styles.ProfileNavigation}>
                     <li className={styles.ProfileNavigationItem}>
-                        <HomeIcon/>
+                        <HomeOutlined/>
                         <a href="#accountInfo">Профиль</a>
                     </li>
                     <li className={styles.ProfileNavigationItem}>
-                        <ProjectsIcon/>
+                        <BusinessCenterSharp/>
                         <a href="#worksPicture">Работы</a>
                     </li>
                 </ul>

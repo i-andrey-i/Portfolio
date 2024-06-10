@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import styles from "../css/Modal.module.css";
-import {ReactComponent as CloseIcon} from "../img/closeIcon.svg";
+import {CloseOutlined} from "@mui/icons-material";
 
 export const Modal = ({isOpen, onClose, children}) => {
 
@@ -10,7 +10,7 @@ export const Modal = ({isOpen, onClose, children}) => {
                 <div className={styles.Modal}>
                     <div className={styles.ModalWrapper}>
                         <div className={styles.ModalContent}>
-                            <CloseIcon className={styles.CloseButton} onClick={() => onClose()}/>
+                            <CloseOutlined className={styles.CloseButton} onClick={() => onClose()}/>
                             {children}
                         </div>
                     </div>

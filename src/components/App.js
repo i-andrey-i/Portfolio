@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {BrowserRouter as Router, Route, Routes, BrowserRouter} from "react-router-dom";
-// АКТУЛЬНАЯ ВЕРСИЯ
 import MainWorksPage from "../pages/MainWorksPage";
 import AccountPage from "../pages/AccountPage";
 import UserRegistration from "../pages/UserRegistration";
@@ -8,7 +7,6 @@ import UserAuthorization from "../pages/UserAuthorization";
 import CreateWorkPage from "../pages/CreateWorkPage";
 import ProjectPage from "../pages/ProjectPage";
 import UserProfileCreate from "../pages/UserProfileCreate";
-import {getMe} from "../api/AuthApi";
 
 const App = () => {
     const token = localStorage.getItem("accessToken");

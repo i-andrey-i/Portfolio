@@ -1,12 +1,10 @@
 import React, {useState} from "react";
 import workIMG from "../img/img-test.png";
 import user from "../img/image 1 (1).png";
-import {ReactComponent as ThumbUp} from "../img/ThumbUp.svg";
-import {ReactComponent as Comment} from "../img/Comment.svg";
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import {Link} from "react-router-dom";
 import styles from "../css/ProjectCard.module.css"
-import {Favorite} from "@mui/icons-material";
+import {ChatBubbleOutlineOutlined, Favorite} from "@mui/icons-material";
 import {likeProject, unlikeProject} from "../api/ProjectApi";
 
 const ProjectCard = props => {
@@ -55,7 +53,7 @@ const ProjectCard = props => {
                     </div>
                     <div className={`${styles.iconWithText} ${styles.projectComments}`}>
                         <span>{projectData.data.comments_count}</span>
-                        <Comment className="icon"/>
+                        <ChatBubbleOutlineOutlined className="icon"/>
                     </div>
                 </div>
             </div>

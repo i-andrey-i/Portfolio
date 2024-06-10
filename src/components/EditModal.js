@@ -9,7 +9,6 @@ export const EditModal = ({isOpen, onClose, profileInfo}) => {
     const {register, handleSubmit} = useForm({defaultValues: {...profileInfo}});
 
     const onSubmit = (formData) => {
-        console.log(formData);
         updateProfile(formData)
             .then(onClose)
             .catch(error => console.log(error));

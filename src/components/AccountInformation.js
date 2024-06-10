@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from "react";
 import styles from "../css/AccountInformation.module.css";
-import {ReactComponent as PhoneIcon} from "../img/phoneIcon.svg";
-import {ReactComponent as EmailIcon} from "../img/emailIcon.svg";
 import {EditModal} from "./EditModal";
+import {EmailOutlined, PhoneOutlined} from "@mui/icons-material";
 
 const AccountInformation = props => {
     const [isOpen, setIsOpen] = useState(false);
@@ -66,13 +65,13 @@ const AccountInformation = props => {
                     <ul className={styles.Contacts}>
                         {props.profileInfo.data.phone_number && (
                             <li>
-                                <PhoneIcon/>
+                                <PhoneOutlined/>
                                 <p>{props.profileInfo.data.phone_number}</p>
                             </li>
                         )}
                         {props.profileInfo.data.email && (
                             <li>
-                                <EmailIcon/>
+                                <EmailOutlined/>
                                 <p>{props.profileInfo.data.email}</p>
                             </li>
                         )}
