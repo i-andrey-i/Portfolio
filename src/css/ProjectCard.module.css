@@ -65,3 +65,7 @@
     align-items: center;
     padding-left: 10px;
 }
+
+.Icon {
+    cursor: pointer;
+}
