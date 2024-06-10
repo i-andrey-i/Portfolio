@@ -2,19 +2,20 @@ import React, {useEffect, useState} from "react"
 import ProjectCard from "./ProjectCard"
 import poster from "../img/name.png";
 import {getUserProjects} from "../api/ProjectApi";
+import styles from "../css/AccountWorksList.module.css";
 
 const AccountWorksList = props => {
     const [projects, setProjects] = useState(null);
 
     useEffect(() => {
-        getUserProjects(props.id)
+        getUserProjects(props.userId)
             .then((data) => {
                 setProjects(data);
             })
             .catch((error) => {
                 console.error(error);
             });
-    }, [props.id]);
+    }, [props.userId]);
 
     if (!projects) {
         return <div>Loading...</div>;
@@ -22,11 +23,12 @@ const AccountWorksList = props => {
 
     return (
         <section className="works-section" id="my-works-page">
-            <center><img className="poster" src={poster} alt="Мои работы" width="366" height="237"/></center>
+            <center><img id="worksPicture" className="poster" src={poster} alt="Мои работы" width="366" height="237"/>
+            </center>
             {Array.isArray(projects) && (
-                <ul className="works-list">
+                <ul className={styles.WorksList}>
                     {projects.map((project) => (
-                        <li className="works-item" key={project.data.id}>
+                        <li className={styles.WorksItem} key={project.data.id}>
                             <ProjectCard showUserInfo={false} project={project}/>
                         </li>
                     ))}

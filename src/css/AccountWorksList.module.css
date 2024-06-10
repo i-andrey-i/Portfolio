@@ -1,0 +1,12 @@
+ul.WorksList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+}
+
+li.WorksItem {
+    flex-basis: 45%;
+    margin: 10px;
+}

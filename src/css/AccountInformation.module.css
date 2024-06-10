@@ -71,6 +71,7 @@ ul.Fields > li > :last-child {
     border-radius: 11px;
     padding: 12px;
     margin-left: 16px;
+    white-space: pre-wrap;
 }
 
 div.ContactsBlock {
@@ -132,4 +133,8 @@ button.SubscribeButton {
     color: #FFFFFF;
     font-size: 16px;
     cursor: pointer;
+}
+
+button.SubscribeButton:active {
+    transform: translateY(1px);
 }

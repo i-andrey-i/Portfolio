@@ -2,27 +2,32 @@ import React from "react";
 import {Modal} from "./Modal";
 import styles from "../css/Form.module.css";
 import {Form} from "./Form";
+import {useForm} from "react-hook-form";
+import {updateProfile} from "../api/ProfileApi";
 
 export const EditModal = ({isOpen, onClose, profileInfo}) => {
+    const {register, handleSubmit} = useForm({defaultValues: {...profileInfo}});
 
-    const onSubmit = (event) => {
-        event.preventDefault();
-        console.log(event);
+    const onSubmit = (formData) => {
+        console.log(formData);
+        updateProfile(formData)
+            .then(onClose)
+            .catch(error => console.log(error));
     }
 
     return (
         <Modal isOpen={isOpen} onClose={onClose}>
-            <Form title={"Изменить"} buttonText={"Сохранить"} onSubmit={onSubmit}>
-                <input id={"editName"} className={styles.FormField} placeholder={"Имя"}
-                       defaultValue={profileInfo.name}/>
-                <input id={"editEducation"} className={styles.FormField} placeholder={"Образование"}
-                       defaultValue={profileInfo.education}/>
-                <input id={"editPhone"} className={styles.FormField} placeholder={"Номер телефона"}
-                       defaultValue={profileInfo.phone_number}/>
-                <input id={"editEmail"} className={styles.FormField} placeholder={"Email"}
-                       defaultValue={profileInfo.email}/>
-                <textarea id={"editDescription"} className={`${styles.FormField} ${styles.BigFormField}`}
-                          placeholder={"Описание"} defaultValue={profileInfo.description}/>
+            <Form title={"Изменить"} buttonText={"Сохранить"} onSubmit={handleSubmit(onSubmit)}>
+                <input className={styles.FormField} placeholder={"Имя"}
+                       {...register("name")}/>
+                <input className={styles.FormField} placeholder={"Образование"}
+                       {...register("education")}/>
+                <input className={styles.FormField} placeholder={"Номер телефона"}
+                       {...register("phone_number")}/>
+                <input className={styles.FormField} placeholder={"Email"}
+                       {...register("email")}/>
+                <textarea className={`${styles.FormField} ${styles.BigFormField}`}
+                          placeholder={"Описание"} {...register("description")}/>
             </Form>
         </Modal>
     )

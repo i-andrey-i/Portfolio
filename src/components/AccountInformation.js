@@ -2,18 +2,19 @@ import React, {useEffect, useState} from "react";
 import styles from "../css/AccountInformation.module.css";
 import {ReactComponent as PhoneIcon} from "../img/phoneIcon.svg";
 import {ReactComponent as EmailIcon} from "../img/emailIcon.svg";
-import {Modal} from "./Modal";
 import {EditModal} from "./EditModal";
 
 const AccountInformation = props => {
     const [isOpen, setIsOpen] = useState(false);
 
+    const userId = localStorage.getItem("userId");
+    const isAuthorised = userId && userId !== "undefined";
+
     useEffect(
         () => {
             if (isOpen) {
                 document.body.style.overflowY = "hidden";
-            }
-            else {
+            } else {
                 document.body.style.overflowY = "scroll";
             }
         },
@@ -21,12 +22,12 @@ const AccountInformation = props => {
     );
 
     return (
-        <div className={styles.MainBlock}>
+        <div id="accountInfo" className={styles.MainBlock}>
             <div className={styles.InfoHeader}>
                 <div className={styles.PictureName}>
                     <img src="../img/user-icon-2.png"/>
                     <p>{props.profileInfo.data.name}</p>
-                    {!props.profileInfo.can_edit && (<button className={styles.SubscribeButton}>Подписаться</button>)}
+                    {!props.profileInfo.can_edit && isAuthorised && (<button className={styles.SubscribeButton}>Подписаться</button>)}
                 </div>
                 <ul className={styles.Counters}>
                     <li className={styles.Counter}>
@@ -56,11 +57,11 @@ const AccountInformation = props => {
                     {props.profileInfo.data.description && (
                         <li>
                             <p>Описание:</p>
-                            <p>{props.profileInfo.data.description}</p>
-                        </li>
-                    )}
-                </ul>
-                <div className={styles.ContactsBlock}>
+                            <p>{props.profileInfo.data.description}</p> { /* TODO: починить перенос */ }
+                            </li>
+                            )}
+                        </ul>
+                        <div className={styles.ContactsBlock}>
                     <p>Контакты:</p>
                     <ul className={styles.Contacts}>
                         {props.profileInfo.data.phone_number && (
@@ -76,16 +77,16 @@ const AccountInformation = props => {
                             </li>
                         )}
                     </ul>
-                </div>
             </div>
-            <div className={styles.ButtonBottom}>
-                {props.profileInfo.can_edit && (
-                    <button className={styles.Change} onClick={() => setIsOpen(true)}>Изменить</button>
-                )}
-            </div>
-            <EditModal isOpen={isOpen} onClose={() => setIsOpen(false)} profileInfo={props.profileInfo.data} />
         </div>
-    )
+    <div className={styles.ButtonBottom}>
+        {props.profileInfo.can_edit && (
+            <button className={styles.Change} onClick={() => setIsOpen(true)}>Изменить</button>
+        )}
+    </div>
+    <EditModal isOpen={isOpen} onClose={() => setIsOpen(false)} profileInfo={props.profileInfo.data}/>
+</div>
+)
 };
 
 export default AccountInformation

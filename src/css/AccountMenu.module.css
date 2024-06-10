@@ -10,7 +10,6 @@ div.MainContainer {
     border-radius: 28px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
     padding: 0;
 }
 
@@ -18,6 +17,9 @@ ul.ProfileNavigation {
     list-style-type: none;
     padding: 16px;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 li.ProfileNavigationItem {
@@ -26,6 +28,10 @@ li.ProfileNavigationItem {
     align-items: center;
     gap: 4px;
     color: #FFFFFF;
+}
+
+li.ProfileNavigationItem a, li.ProfileNavigationItem a:visited {
+    color: inherit;
 }
 
 .ExitContainer {

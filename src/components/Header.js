@@ -8,15 +8,10 @@ import {ReactComponent as LogoutIcon} from "../img/LogoutIcon.svg";
 import {ReactComponent as AddPostIcon} from "../img/AddPostIcon.svg";
 import styles from "../css/Header.module.css";
 import {getMe} from "../api/AuthApi";
+import {logout} from "../api/Utils";
 
 const Header = () => {
     const navigate = useNavigate();
-
-    const logout = () => {
-        localStorage.removeItem("accessToken");
-        localStorage.removeItem("userId");
-        window.location.reload(); // TODO: Может быть придумать чета получше
-    }
 
     const userId = localStorage.getItem("userId");
     const isAuthorised = userId && userId !== "undefined";
