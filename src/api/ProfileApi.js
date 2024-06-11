@@ -47,3 +47,30 @@ export const updateProfilePicture = (body) => {
     })
         .catch(error => console.error(error));
 }
+
+export const subscribeProfile = (id) => {
+    return fetch(`${BASE_URL}/profiles/subscribe/${id}`, {
+        ...createRequestConfig("POST")
+    }).then(response => {
+        return response.json()
+    })
+        .catch(error => console.error(error));
+}
+
+export const unsubscribeProfile = (id) => {
+    return fetch(`${BASE_URL}/profiles/unsubscribe/${id}`, {
+        ...createRequestConfig("DELETE")
+    }).then(response => {
+        return response.json()
+    })
+        .catch(error => console.error(error));
+}
+
+export const getSubscriptions = () => {
+    return fetch(`${BASE_URL}/profiles/subscriptions`, {
+        ...createRequestConfig("GET")
+    }).then(response => {
+        return response.json()
+    })
+        .catch(error => console.error(error));
+}

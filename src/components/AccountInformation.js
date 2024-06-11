@@ -2,16 +2,31 @@ import React, {useEffect, useState} from "react";
 import styles from "../css/AccountInformation.module.css";
 import {EditModal} from "./EditModal";
 import {EmailOutlined, PhoneOutlined} from "@mui/icons-material";
-import {getProfilePicture} from "../api/ProfileApi";
+import {getProfilePicture, subscribeProfile, unsubscribeProfile} from "../api/ProfileApi";
 import {UploadImageModal} from "./UploadImageModal";
 
 const AccountInformation = props => {
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
     const [isUpdateImageModalOpen, setIsUpdateImageModalOpen] = useState(false);
     const [profileImageSrc, setProfileImageSrc] = useState('');
+    const [profileInfo, setProfileInfo] = useState(props.profileInfo);
 
     const userId = localStorage.getItem("userId");
     const isAuthorised = userId && userId !== "undefined";
+
+    const toggleSubscription = () => {
+        if (!isAuthorised)
+            return;
+        if (profileInfo.is_subscribed) {
+            unsubscribeProfile(profileInfo.data.user_id)
+                .then(data => setProfileInfo(data))
+                .catch(error => console.log(error));
+        } else {
+            subscribeProfile(profileInfo.data.user_id)
+                .then(data => setProfileInfo(data))
+                .catch(error => console.log(error));
+        }
+    }
 
     useEffect(
         () => {
@@ -25,7 +40,7 @@ const AccountInformation = props => {
     );
 
     useEffect(() => {
-        getProfilePicture(props.profileInfo.data.user_id)
+        getProfilePicture(profileInfo.data.user_id)
             .then(blob => {
                 const objectUrl = URL.createObjectURL(blob);
                 setProfileImageSrc(objectUrl);
@@ -39,80 +54,85 @@ const AccountInformation = props => {
         };
     }, []);
 
+
     return (
         <div id="accountInfo" className={styles.MainBlock}>
             <div className={styles.InfoHeader}>
                 <div className={styles.PictureName}>
-                    <div className={`${styles.ImageContainer} ${props.profileInfo.can_edit ? styles.Clickable : ""}`}>
+                    <div className={`${styles.ImageContainer} ${profileInfo.can_edit ? styles.Clickable : ""}`}>
                         {profileImageSrc &&
                             <img
-                                onClick={props.profileInfo.can_edit ?
+                                onClick={profileInfo.can_edit ?
                                     () => setIsUpdateImageModalOpen(true) :
                                     () => true}
                                 src={profileImageSrc} width="64"
                                 height="64"/>}
                     </div>
-                    <p>{props.profileInfo.data.name}</p>
-                    {!props.profileInfo.can_edit && isAuthorised && (
-                        <button className={styles.SubscribeButton}>Подписаться</button>)}
+                    <p>{profileInfo.data.name}</p>
+                    {!profileInfo.can_edit && isAuthorised && (
+                        <button
+                            onClick={() => toggleSubscription()}
+                            className={profileInfo.is_subscribed ? styles.UnsubscribeButton : styles.SubscribeButton}>
+                            {profileInfo.is_subscribed ? "Отписаться" : "Подписаться"}
+                        </button>)}
                 </div>
                 <ul className={styles.Counters}>
                     <li className={styles.Counter}>
                         <p>Подписчики</p>
-                        <p>{props.profileInfo.data.projects_count}</p>
+                        <p>{profileInfo.data.subscribers_count}</p>
                     </li>
                     <li className={styles.Counter}>
                         <p>Публикации</p>
-                        <p>{props.profileInfo.data.projects_count}</p>
+                        <p>{profileInfo.data.projects_count}</p>
                     </li>
                 </ul>
             </div>
             <div className={styles.ProfileInfo}>
                 <ul className={styles.Fields}>
-                    {props.profileInfo.data.city && (
+                    {profileInfo.data.city && (
                         <li>
                             <p>Город:</p>
-                            <p>{props.profileInfo.data.city}</p>
+                            <p>{profileInfo.data.city}</p>
                         </li>
                     )}
-                    {props.profileInfo.data.education && (
+                    {profileInfo.data.education && (
                         <li>
                             <p>Учебное заведение:</p>
-                            <p>{props.profileInfo.data.education}</p>
+                            <p>{profileInfo.data.education}</p>
                         </li>
                     )}
-                    {props.profileInfo.data.description && (
+                    {profileInfo.data.description && (
                         <li>
                             <p>Описание:</p>
-                            <p>{props.profileInfo.data.description}</p>
+                            <p>{profileInfo.data.description}</p>
                         </li>
                     )}
                 </ul>
                 <div className={styles.ContactsBlock}>
                     <p>Контакты:</p>
                     <ul className={styles.Contacts}>
-                        {props.profileInfo.data.phone_number && (
+                        {profileInfo.data.phone_number && (
                             <li>
                                 <PhoneOutlined/>
-                                <p>{props.profileInfo.data.phone_number}</p>
+                                <p>{profileInfo.data.phone_number}</p>
                             </li>
                         )}
-                        {props.profileInfo.data.email && (
+                        {profileInfo.data.email && (
                             <li>
                                 <EmailOutlined/>
-                                <p>{props.profileInfo.data.email}</p>
+                                <p>{profileInfo.data.email}</p>
                             </li>
                         )}
                     </ul>
                 </div>
             </div>
             <div className={styles.ButtonBottom}>
-                {props.profileInfo.can_edit && (
+                {profileInfo.can_edit && (
                     <button className={styles.Change} onClick={() => setIsEditModalOpen(true)}>Изменить</button>
                 )}
             </div>
             <EditModal isOpen={isEditModalOpen} onClose={() => setIsEditModalOpen(false)}
-                       profileInfo={props.profileInfo.data}/>
+                       profileInfo={profileInfo.data}/>
             <UploadImageModal isOpen={isUpdateImageModalOpen} onClose={() => setIsUpdateImageModalOpen(false)}/>
         </div>
     )

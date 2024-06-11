@@ -36,6 +36,15 @@ export const getNewestProjects = (offset = 0, limit = 10) => {
         .catch(error => console.error(error));
 }
 
+export const getSubscribedProjects = (offset = 0, limit = 10) => {
+    return fetch(`${BASE_URL}/projects/subscribed?limit=${limit}&offset=${offset}`, {
+        ...createRequestConfig("GET")
+    }).then(response => {
+        return response.json()
+    })
+        .catch(error => console.error(error));
+}
+
 export const likeProject = (project_id) => {
     return fetch(`${BASE_URL}/projects/add_like?project_id=${project_id}`, {
         ...createRequestConfig("POST")
