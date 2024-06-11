@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import workIMG from "../img/img-test.png";
 import user from "../img/image 1 (1).png";
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
@@ -6,20 +6,26 @@ import {Link} from "react-router-dom";
 import styles from "../css/ProjectCard.module.css"
 import {ChatBubbleOutlineOutlined, Favorite} from "@mui/icons-material";
 import {likeProject, unlikeProject} from "../api/ProjectApi";
+import {getProfilePicture} from "../api/ProfileApi";
 
 const ProjectCard = props => {
     const {project, showUserInfo} = props;
     const [projectData, setProjectData] = useState(project);
+    const [profileImageSrc, setProfileImageSrc] = useState('');
     const date = new Date(project.data.created_at);
     const formattedDate = date.toLocaleDateString('ru-RU', {day: '2-digit', month: '2-digit', year: 'numeric'});
 
+    const userId = localStorage.getItem("userId");
+    const isAuthorised = userId && userId !== "undefined";
+
     const toggleLike = () => {
+        if (!isAuthorised)
+            return;
         if (projectData.is_liked) {
             unlikeProject(project.data.id)
                 .then(data => setProjectData(data))
                 .catch(error => console.log(error));
-        }
-        else {
+        } else {
             likeProject(project.data.id)
                 .then(data => setProjectData(data))
                 .catch(error => console.log(error));
@@ -27,15 +33,32 @@ const ProjectCard = props => {
         console.log(projectData);
     }
 
+    useEffect(() => {
+        if (!props.showUserInfo)
+            return;
+        getProfilePicture(projectData.data.user_id)
+            .then(blob => {
+                const objectUrl = URL.createObjectURL(blob);
+                setProfileImageSrc(objectUrl);
+            })
+            .catch(error => console.log(error));
+
+        return () => {
+            if (profileImageSrc) {
+                URL.revokeObjectURL(profileImageSrc);
+            }
+        };
+    }, []);
+
     return (
         <div className={styles.projectCard}>
             {showUserInfo && (
                 <Link to={`/profile/${projectData.data.user_id}`}>
                     <div className={styles.userInfo}>
-
-                        <img src={user} alt="" width="38" height="38"/>
+                        <div className={styles.ImageContainer}>
+                            {profileImageSrc && <img src={profileImageSrc} alt="" width="38" height="38"/>}
+                        </div>
                         <p className={styles.username}>{projectData.data.username}</p>
-
                     </div>
                 </Link>
             )}
@@ -44,12 +67,15 @@ const ProjectCard = props => {
                 <img className={styles.projectPreview} src={workIMG} alt="Изображение работы"/>
                 <p className={styles.projectDescription}>{projectData.data.description}</p>
                 <div className={styles.projectMeta}>
-                    <time className={styles.projectCreatedAt} dateTime={projectData.data.created_at}>{formattedDate}</time>
+                    <time className={styles.projectCreatedAt}
+                          dateTime={projectData.data.created_at}>{formattedDate}</time>
                     <div className={`${styles.iconWithText} ${styles.projectLikes}`}>
                         <span>{projectData.data.likes_count}</span>
                         {projectData.is_liked ?
-                            <Favorite onClick={() => toggleLike()} className={`${styles.Icon} ${styles.Like}`} style={{fill: "red"}}/> :
-                            <FavoriteBorderOutlinedIcon onClick={() => toggleLike()} className={`${styles.Icon} ${styles.Like}`}/>}
+                            <Favorite onClick={() => toggleLike()} className={`${styles.Icon} ${styles.Like}`}
+                                      style={{fill: "red"}}/> :
+                            <FavoriteBorderOutlinedIcon onClick={() => toggleLike()}
+                                                        className={`${styles.Icon} ${styles.Like}`}/>}
                     </div>
                     <div className={`${styles.iconWithText} ${styles.projectComments}`}>
                         <span>{projectData.data.comments_count}</span>

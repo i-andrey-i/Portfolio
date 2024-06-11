@@ -28,3 +28,22 @@ export const updateProfile = ({name, education, description, phone_number, email
     })
         .catch(error => console.error(error));
 }
+
+export const getProfilePicture = (id) => {
+    return fetch(`${BASE_URL}/profiles/get_image/${id}`, {
+        ...createRequestConfig("GET")
+    }).then(response => {
+        return response.blob()
+    })
+        .catch(error => console.error(error));
+}
+
+export const updateProfilePicture = (body) => {
+    return fetch(`${BASE_URL}/profiles/update_image`, {
+        ...createRequestConfig("POST", true),
+        body: body
+    }).then(response => {
+        return response.json()
+    })
+        .catch(error => console.error(error));
+}
