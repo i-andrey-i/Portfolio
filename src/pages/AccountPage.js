@@ -33,9 +33,9 @@ const AccountPage = () => {
             <main>
                 <article className={styles.TwoSections}>
                     <AccountMenu can_edit={profileInfo.can_edit}/>
-                    <AccountInformation userId={id} profileInfo={profileInfo}/>
+                    <AccountInformation profileInfo={profileInfo}/>
                 </article>
-                <AccountWorksList userId={id}/>
+                <AccountWorksList userId={profileInfo.data.user_id}/>
             </main>
         </div>
     )

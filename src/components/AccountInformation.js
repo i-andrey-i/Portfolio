@@ -28,6 +28,10 @@ const AccountInformation = props => {
         }
     }
 
+    useEffect(() => {
+        setProfileInfo(props.profileInfo);
+    }, [props.profileInfo]);
+
     useEffect(
         () => {
             if (isEditModalOpen || isUpdateImageModalOpen) {
@@ -52,7 +56,7 @@ const AccountInformation = props => {
                 URL.revokeObjectURL(profileImageSrc);
             }
         };
-    }, []);
+    }, [profileInfo.data.user_id]);
 
 
     return (

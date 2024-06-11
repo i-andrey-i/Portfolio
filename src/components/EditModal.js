@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {Modal} from "./Modal";
 import styles from "../css/Form.module.css";
 import {Form} from "./Form";
@@ -6,7 +6,7 @@ import {useForm} from "react-hook-form";
 import {updateProfile} from "../api/ProfileApi";
 
 export const EditModal = ({isOpen, onClose, profileInfo}) => {
-    const {register, handleSubmit} = useForm({defaultValues: {...profileInfo}});
+    const {register, handleSubmit} = useForm({values: {...profileInfo}});
 
     const onSubmit = (formData) => {
         updateProfile(formData)
