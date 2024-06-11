@@ -43,9 +43,9 @@ const AccountInformation = props => {
         <div id="accountInfo" className={styles.MainBlock}>
             <div className={styles.InfoHeader}>
                 <div className={styles.PictureName}>
-                    <div className={styles.ImageContainer}>
+                    <div className={`${styles.ImageContainer} ${props.profileInfo.can_edit ? styles.Clickable : ""}`}>
                         {profileImageSrc &&
-                            <img onClick={() => setIsUpdateImageModalOpen(true)} src={profileImageSrc} width="64"
+                            <img onClick={props.profileInfo.can_edit ? () => setIsUpdateImageModalOpen(true) : () => true} src={profileImageSrc} width="64"
                                  height="64"/>}
                     </div>
                     <p>{props.profileInfo.data.name}</p>

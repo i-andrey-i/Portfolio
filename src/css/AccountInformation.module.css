@@ -24,7 +24,7 @@ div.PictureName > p {
     font-size: 20px;
 }
 
-div.PictureName > div.ImageContainer {
+div.PictureName > div.Clickable {
     cursor: pointer;
 }
 
