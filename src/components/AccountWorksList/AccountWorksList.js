@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react"
-import ProjectCard from "./ProjectCard"
-import poster from "../img/name.png";
-import {getUserProjects} from "../api/ProjectApi";
-import styles from "../css/AccountWorksList.module.css";
+import ProjectCard from "../ProjectCard/ProjectCard"
+import poster from "../../img/name.png";
+import {getUserProjects} from "../../api/ProjectApi";
+import styles from "./AccountWorksList.module.css";
 
 const AccountWorksList = props => {
     const [projects, setProjects] = useState(null);

@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import styles from "../css/Modal.module.css";
+import styles from "./Modal.module.css";
 import {CloseOutlined} from "@mui/icons-material";
 
 export const Modal = ({isOpen, onClose, children}) => {

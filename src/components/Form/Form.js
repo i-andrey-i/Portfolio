@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../css/Form.module.css"
+import styles from "./Form.module.css"
 
 export const Form = ({title, children, buttonText, ...props}) => {
 

@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "../css/AccountMenu.module.css"
-import {logout} from "../api/Utils";
+import styles from "./AccountMenu.module.css"
+import {logout} from "../../api/Utils";
 import {useNavigate} from "react-router-dom";
 import {BusinessCenterSharp, HomeOutlined} from "@mui/icons-material";
 

@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../components/Header";
-import icon2 from "../img/user-icon-2.png";
+import Header from "../../components/Header/Header";
+import icon2 from "../../img/user-icon-2.png";
 
 const ProjectPage = () => (
     <div>

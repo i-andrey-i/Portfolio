@@ -1,0 +1,32 @@
+.InputBlock {
+    background-color: #F3F8FF;
+    border-radius: 9px;
+}
+
+.TitleBlock {
+    border-bottom: 1px solid #7A8CCC;
+    padding: 8px 8px 8px 24px;
+    color: #6D6D6D;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.Input {
+    padding: 24px;
+    width: 100%;
+}
+
+.Input > input, .Input > textarea {
+    width: 90%;
+    border: none;
+    color: #464671;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: transparent;
+    resize: none;
+}
+
+.Input > input:focus, .Input > textarea:focus {
+    outline: none;
+    border-bottom: 1px solid #7A8CCC;
+}

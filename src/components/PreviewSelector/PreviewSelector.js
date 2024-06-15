@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import styles from '../css/PreviewSelector.module.css';
+import styles from './PreviewSelector.module.css';
 import {AddOutlined} from "@mui/icons-material";
 
 const PreviewSelector = () => {
@@ -15,7 +15,7 @@ const PreviewSelector = () => {
     return (
         <div>
             <label htmlFor={"previewUpload"}>
-                <input id={"previewUpload"} type={"file"} onChange={changePicture}/>
+                <input id={"previewUpload"} accept="image/png, image/jpeg" type={"file"} onChange={changePicture}/>
                 <div className={styles.ImageContainer}>
 
                     {imageSrc ? <img src={imageSrc} id={"preview"} alt={""}/> :

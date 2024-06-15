@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
-import styles from "../css/AccountInformation.module.css";
-import {EditModal} from "./EditModal";
+import styles from "./AccountInformation.module.css";
+import {EditModal} from "../EditModal/EditModal";
 import {EmailOutlined, PhoneOutlined} from "@mui/icons-material";
-import {getProfilePicture, subscribeProfile, unsubscribeProfile} from "../api/ProfileApi";
-import {UploadImageModal} from "./UploadImageModal";
+import {getProfilePicture, subscribeProfile, unsubscribeProfile} from "../../api/ProfileApi";
+import {UploadImageModal} from "../UploadImageModal/UploadImageModal";
 
 const AccountInformation = props => {
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);

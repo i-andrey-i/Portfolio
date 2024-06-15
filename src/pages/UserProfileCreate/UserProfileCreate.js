@@ -1,9 +1,9 @@
 import React from "react";
 import {useNavigate} from 'react-router-dom';
-import {createProfile} from "../api/ProfileApi";
+import {createProfile} from "../../api/ProfileApi";
 import {useForm} from "react-hook-form";
-import styles from "../css/Form.module.css";
-import {Form} from "../components/Form";
+import styles from "../../components/Form/Form.module.css";
+import {Form} from "../../components/Form/Form";
 
 const UserProfileCreate = () => {
     const {register, handleSubmit} = useForm();

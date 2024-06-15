@@ -39,7 +39,7 @@
 }
 
 .searchWithIcon.loupe .input {
-    background-image: url('../img/Loupe.svg');
+    background-image: url('../../img/Loupe.svg');
     background-position: 10px 10px;
     background-repeat: no-repeat;
     background-color: #8AB1EB;

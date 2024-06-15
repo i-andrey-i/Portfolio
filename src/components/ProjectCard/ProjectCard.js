@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from "react";
-import workIMG from "../img/img-test.png";
-import user from "../img/image 1 (1).png";
+import workIMG from "../../img/img-test.png";
+import user from "../../img/image 1 (1).png";
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import {Link} from "react-router-dom";
-import styles from "../css/ProjectCard.module.css"
+import styles from "./ProjectCard.module.css"
 import {ChatBubbleOutlineOutlined, Favorite} from "@mui/icons-material";
-import {likeProject, unlikeProject} from "../api/ProjectApi";
-import {getProfilePicture} from "../api/ProfileApi";
+import {likeProject, unlikeProject} from "../../api/ProjectApi";
+import {getProfilePicture} from "../../api/ProfileApi";
 
 const ProjectCard = props => {
     const {project, showUserInfo} = props;

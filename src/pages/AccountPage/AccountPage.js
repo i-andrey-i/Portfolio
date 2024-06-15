@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
-import Header from "../components/Header"
-import AccountInformation from "../components/AccountInformation";
-import AccountMenu from "../components/AccountMenu";
-import AccountWorksList from "../components/AccountWorksList";
+import Header from "../../components/Header/Header"
+import AccountInformation from "../../components/AccountInformation/AccountInformation";
+import AccountMenu from "../../components/AccountMenu/AccountMenu";
+import AccountWorksList from "../../components/AccountWorksList/AccountWorksList";
 import {useParams} from "react-router-dom";
-import {getProfile} from "../api/ProfileApi";
-import styles from "../css/AccountPage.module.css";
+import {getProfile} from "../../api/ProfileApi";
+import styles from "./AccountPage.module.css";
 
 const AccountPage = () => {
     const [profileInfo, setProfileInfo] = useState(null);

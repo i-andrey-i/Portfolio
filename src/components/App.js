@@ -1,12 +1,12 @@
 import React, {useState} from "react";
 import {BrowserRouter as Router, Route, Routes, BrowserRouter} from "react-router-dom";
-import MainWorksPage from "../pages/MainWorksPage";
-import AccountPage from "../pages/AccountPage";
-import UserRegistration from "../pages/UserRegistration";
-import UserAuthorization from "../pages/UserAuthorization";
-import CreateWorkPage from "../pages/CreateWorkPage";
-import ProjectPage from "../pages/ProjectPage";
-import UserProfileCreate from "../pages/UserProfileCreate";
+import MainWorksPage from "../pages/MainWorksPage/MainWorksPage";
+import AccountPage from "../pages/AccountPage/AccountPage";
+import UserRegistration from "../pages/UserRegistration/UserRegistration";
+import UserAuthorization from "../pages/UserAuthorization/UserAuthorization";
+import CreateWorkPage from "../pages/CreateWorkPage/CreateWorkPage";
+import ProjectPage from "../pages/ProjectPage/ProjectPage";
+import UserProfileCreate from "../pages/UserProfileCreate/UserProfileCreate";
 
 const App = () => {
     const token = localStorage.getItem("accessToken");

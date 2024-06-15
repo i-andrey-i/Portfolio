@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
-import ProjectCard from "../components/ProjectCard";
-import Header from "../components/Header";
+import ProjectCard from "../../components/ProjectCard/ProjectCard";
+import Header from "../../components/Header/Header";
 import {Link} from 'react-router-dom';
-import {getNewestProjects, getProjects, getSubscribedProjects, getUserProjects} from "../api/ProjectApi";
-import styles from "../css/MainWorksPage.module.css"
+import {getNewestProjects, getProjects, getSubscribedProjects, getUserProjects} from "../../api/ProjectApi";
+import styles from "./MainWorksPage.module.css"
 
 const MainWorksPage = () => {
     const [projects, setProjects] = useState(null);

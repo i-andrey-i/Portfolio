@@ -1,11 +1,11 @@
 import React from "react";
 import {Link, useNavigate} from 'react-router-dom';
-import {ReactComponent as Logo} from "../img/Logo.svg";
-import {ReactComponent as ProfileIcon} from "../img/profileIcon.svg";
-import {ReactComponent as DropdownArrow} from "../img/dropdownArrow.svg";
-import styles from "../css/Header.module.css";
-import {getMe} from "../api/AuthApi";
-import {logout} from "../api/Utils";
+import {ReactComponent as Logo} from "../../img/Logo.svg";
+import {ReactComponent as ProfileIcon} from "../../img/profileIcon.svg";
+import {ReactComponent as DropdownArrow} from "../../img/dropdownArrow.svg";
+import styles from "./Header.module.css";
+import {getMe} from "../../api/AuthApi";
+import {logout} from "../../api/Utils";
 import {AddOutlined, LoginOutlined, LogoutOutlined} from "@mui/icons-material";
 
 const Header = () => {

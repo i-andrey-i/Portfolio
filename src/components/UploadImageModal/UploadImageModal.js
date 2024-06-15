@@ -1,9 +1,9 @@
 import React from 'react';
-import {Modal} from "./Modal";
-import {Form} from "./Form";
+import {Modal} from "../Modal/Modal";
+import {Form} from "../Form/Form";
 import {useForm} from "react-hook-form";
-import styles from "../css/Form.module.css";
-import {updateProfilePicture} from "../api/ProfileApi";
+import styles from "../Form/Form.module.css";
+import {updateProfilePicture} from "../../api/ProfileApi";
 
 export const UploadImageModal = ({isOpen, onClose}) => {
     const {register, handleSubmit} = useForm();
@@ -24,7 +24,7 @@ export const UploadImageModal = ({isOpen, onClose}) => {
     return (
         <Modal isOpen={isOpen} onClose={onClose}>
             <Form title={"Загрузить фото"} buttonText={"Отправить"} onSubmit={handleSubmit(onSubmit)}>
-                <input className={styles.FormField} type="file" {...register("file")}/>
+                <input className={styles.FormField} accept="image/png, image/jpeg" type="file" {...register("file")}/>
             </Form>
         </Modal>
     )
