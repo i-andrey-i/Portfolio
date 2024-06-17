@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import {AddOutlined, CancelOutlined, PhotoOutlined} from "@mui/icons-material";
 import styles from "./PictureSelector.module.css";
+import {getBase64} from "../../api/Utils";
 
-const PictureSelector = () => {
+const PictureSelector = ({register, key, index, remove, setValue}) => {
     const [imageSrc, setImageSrc] = useState(null);
     const [fileName, setFileName] = useState(null);
     const textAreaChanger = (event) => {
@@ -15,19 +16,23 @@ const PictureSelector = () => {
         const objectUrl = URL.createObjectURL(event.target.files[0]);
         setFileName(event.target.files[0].name);
         setImageSrc(objectUrl);
+        getBase64(event.target.files[0], (result) => {
+            setValue(`pictures.${index}.picture`, result);
+        });
     }
 
     return (
         <div className={styles.PictureSelector}>
             <div className={styles.HeadPart}>
-                <CancelOutlined className={styles.CancelIcon}/>
+                <CancelOutlined className={styles.CancelIcon} onClick={() => remove(index)}/>
                 {fileName &&
                     (<><PhotoOutlined/>
                         <span>{fileName}</span></>)
                 }
             </div>
             <label>
-                <input type={"file"} onChange={fileChange}/>
+                <input type={"file"}
+                       key={key} {...register(`pictures.${index}.photo`, {onChange: e => fileChange(e)})}/>
                 <div className={styles.ImageContainer}>
                     {imageSrc ? <img src={imageSrc} alt={""}/> :
                         <AddOutlined fontSize={"inherit"}/>}
@@ -35,7 +40,8 @@ const PictureSelector = () => {
             </label>
             <div className={styles.DescriptionInput}>
                 Описание изображения:
-                <textarea onInput={textAreaChanger} placeholder={"Введите краткое описание"}/>
+                <textarea key={key} onInput={textAreaChanger} {...register(`pictures.${index}.description`)}
+                          placeholder={"Введите краткое описание"}/>
             </div>
         </div>
     );

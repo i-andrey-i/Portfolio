@@ -62,3 +62,22 @@ export const unlikeProject = (project_id) => {
     })
         .catch(error => console.error(error));
 }
+
+export const createProject = ({title, description, preview, pictures, files}) => {
+    return fetch(`${BASE_URL}/projects/create`, {
+        ...createRequestConfig("POST"),
+        body: JSON.stringify({title, description, preview, pictures, files})
+    }).then(response => {
+        return response.json()
+    })
+        .catch(error => console.error(error));
+}
+
+export const getProjectPicture = (path) => {
+    return fetch(`${BASE_URL}/projects/get_image/${path}`, {
+        ...createRequestConfig("GET"),
+    }).then(response => {
+        return response.blob()
+    })
+        .catch(error => console.error(error));
+}

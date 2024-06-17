@@ -5,13 +5,14 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 import {Link} from "react-router-dom";
 import styles from "./ProjectCard.module.css"
 import {ChatBubbleOutlineOutlined, Favorite} from "@mui/icons-material";
-import {likeProject, unlikeProject} from "../../api/ProjectApi";
+import {getProjectPicture, likeProject, unlikeProject} from "../../api/ProjectApi";
 import {getProfilePicture} from "../../api/ProfileApi";
 
 const ProjectCard = props => {
     const {project, showUserInfo} = props;
     const [projectData, setProjectData] = useState(project);
-    const [profileImageSrc, setProfileImageSrc] = useState('');
+    const [projectPreviewSrc, setProjectPreviewSrc] = useState(null);
+    const [profileImageSrc, setProfileImageSrc] = useState(null);
     const date = new Date(project.data.created_at);
     const formattedDate = date.toLocaleDateString('ru-RU', {day: '2-digit', month: '2-digit', year: 'numeric'});
 
@@ -50,6 +51,21 @@ const ProjectCard = props => {
         };
     }, []);
 
+    useEffect(() => {
+        getProjectPicture(projectData.data.preview)
+            .then(blob => {
+                const objectUrl = URL.createObjectURL(blob);
+                setProjectPreviewSrc(objectUrl);
+            })
+            .catch(error => console.log(error));
+
+        return () => {
+            if (projectPreviewSrc) {
+                URL.revokeObjectURL(projectPreviewSrc);
+            }
+        }
+    }, [])
+
     return (
         <div className={styles.projectCard}>
             {showUserInfo && (
@@ -64,7 +80,9 @@ const ProjectCard = props => {
             )}
             <div className={styles.projectInfo}>
                 <p className={styles.projectTitle}>{projectData.data.title}</p>
-                <img className={styles.projectPreview} src={workIMG} alt="Изображение работы"/>
+                <div className={styles.ImageContainer}>
+                    <img className={styles.projectPreview} src={projectPreviewSrc} alt="Изображение работы"/>
+                </div>
                 <p className={styles.projectDescription}>{projectData.data.description}</p>
                 <div className={styles.projectMeta}>
                     <time className={styles.projectCreatedAt}

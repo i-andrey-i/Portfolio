@@ -41,16 +41,16 @@
     padding: 16px 36px;
 }
 
+.projectInfo > .ImageContainer {
+    width: 100%;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+}
+
 .projectTitle {
     font-weight: 500;
     font-size: 17px;
     margin: 0 0 16px 0;
-}
-
-.projectPreview {
-    margin: 0 auto;
-    width: 100%;
-
 }
 
 .projectDescription {
@@ -63,6 +63,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     overflow-wrap: anywhere;
+    white-space: pre-wrap;
 }
 
 .projectMeta {
