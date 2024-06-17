@@ -1,3 +1,7 @@
+input[type=file].HiddenInput  {
+    display: none;
+}
+
 .PictureSelector {
     padding: 16px;
     display: flex;

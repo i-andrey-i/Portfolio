@@ -18,7 +18,7 @@ const PreviewSelector = ({register, setValue}) => {
     return (
         <div>
             <label htmlFor={"previewUpload"}>
-                <input id={"previewUpload"} accept="image/png, image/jpeg"
+                <input className={styles.HiddenInput} id={"previewUpload"} accept="image/png, image/jpeg"
                        type={"file"} {...register("preview", {onChange: e => changePicture(e)})}/>
                 <div className={styles.ImageContainer}>
 

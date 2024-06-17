@@ -31,7 +31,7 @@ const PictureSelector = ({register, key, index, remove, setValue}) => {
                 }
             </div>
             <label>
-                <input type={"file"}
+                <input className={styles.HiddenInput} type={"file"}
                        key={key} {...register(`pictures.${index}.photo`, {onChange: e => fileChange(e)})}/>
                 <div className={styles.ImageContainer}>
                     {imageSrc ? <img src={imageSrc} alt={""}/> :
