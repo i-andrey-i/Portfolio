@@ -45,12 +45,14 @@
     width: 100%;
     margin: 0 auto;
     aspect-ratio: 16 / 9;
+    cursor: pointer;
 }
 
 .projectTitle {
     font-weight: 500;
     font-size: 17px;
     margin: 0 0 16px 0;
+    cursor: pointer;
 }
 
 .projectDescription {

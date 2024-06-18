@@ -2,13 +2,14 @@ import React, {useEffect, useState} from "react";
 import workIMG from "../../img/img-test.png";
 import user from "../../img/image 1 (1).png";
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import styles from "./ProjectCard.module.css"
 import {ChatBubbleOutlineOutlined, Favorite} from "@mui/icons-material";
 import {getProjectPicture, likeProject, unlikeProject} from "../../api/ProjectApi";
 import {getProfilePicture} from "../../api/ProfileApi";
 
 const ProjectCard = props => {
+    const navigate = useNavigate();
     const {project, showUserInfo} = props;
     const [projectData, setProjectData] = useState(project);
     const [projectPreviewSrc, setProjectPreviewSrc] = useState(null);
@@ -79,8 +80,12 @@ const ProjectCard = props => {
                 </Link>
             )}
             <div className={styles.projectInfo}>
-                <p className={styles.projectTitle}>{projectData.data.title}</p>
-                <div className={styles.ImageContainer}>
+                <p className={styles.projectTitle} onClick={() => {
+                    navigate(`/project/${projectData.data.id}`)
+                }}>{projectData.data.title}</p>
+                <div className={styles.ImageContainer} onClick={() => {
+                    navigate(`/project/${projectData.data.id}`)
+                }}>
                     <img className={styles.projectPreview} src={projectPreviewSrc} alt="Изображение работы"/>
                 </div>
                 <p className={styles.projectDescription}>{projectData.data.description}</p>
