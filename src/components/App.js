@@ -8,6 +8,7 @@ import CreateWorkPage from "../pages/CreateWorkPage/CreateWorkPage";
 import ProjectPage from "../pages/ProjectPage/ProjectPage";
 import UserProfileCreate from "../pages/UserProfileCreate/UserProfileCreate";
 import {AuthorizationRoutes, ProtectedRoutes} from "./RouteGuardian";
+import {getMe} from "../api/AuthApi";
 
 const App = () => {
     const token = localStorage.getItem("accessToken");
