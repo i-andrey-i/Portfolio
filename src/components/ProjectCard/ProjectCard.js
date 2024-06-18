@@ -1,6 +1,4 @@
 import React, {useEffect, useState} from "react";
-import workIMG from "../../img/img-test.png";
-import user from "../../img/image 1 (1).png";
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import {Link, useNavigate} from "react-router-dom";
 import styles from "./ProjectCard.module.css"
