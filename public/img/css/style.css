@@ -259,7 +259,7 @@ button{
 
 /* SECTION 3 */
 
-.my-works-section{
+.works-section{
     margin: 0;
     margin-top:40px;
     margin-left: 130px;
@@ -267,7 +267,7 @@ button{
 }
 
 
-.all-my-works{
+.works-list{
     display: flex;
     column-gap: 130px;
     row-gap: 25px;
@@ -279,7 +279,7 @@ button{
 
 }
 
-.my-work-item{
+.works-item{
     width: 44%;
     height: 40%;
     margin: 0;
@@ -289,7 +289,7 @@ button{
     border-radius: 21px;
 }
 
-.title-of-my-work{
+.project-title{
     width: 40%;
     height: 40%;
     margin-top: 6px;
@@ -300,14 +300,14 @@ button{
     color: #000;
 }
 
-.img-of-work{
+.project-preview{
     padding-left:25px;
     margin-right: 60px;
     width:90%;
     height: 10%;
 }
 
-.description{
+.project-description{
     padding-left:25px;
     width: 60%;
     height: 80%;
@@ -316,7 +316,7 @@ button{
     line-height: 14px;
 }
 
-.date{
+.project-created-at{
     padding-left:25px;
     width: 40%;
     height: 40%;
@@ -367,7 +367,7 @@ button{
     border-bottom: 1px solid rgba(138, 177, 235, 1)
 }
 
-.name-user{
+.username{
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;

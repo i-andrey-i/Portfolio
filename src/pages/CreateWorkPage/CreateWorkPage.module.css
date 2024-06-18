@@ -1,0 +1,102 @@
+main {
+    padding: 64px;
+}
+
+.Title {
+    text-align: center;
+    color: #FFF8F8;
+    font-weight: 600;
+    font-size: 25px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.TwoSections {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    padding-top: 32px;
+}
+
+form > div.TwoSections > div {
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    form > div.TwoSections {
+        flex-direction: column;
+    }
+
+    form > div.TwoSections > div {
+        width: 100%;
+    }
+}
+
+.PicturesBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.AdditionalPictures {
+    background-color: rgba(95, 82, 173, 0.53);
+    border-radius: 12px;
+    color: #FFFFFF;
+}
+
+.AdditionalPictures .TextBlock {
+    padding: 16px 16px;
+    border-bottom: 1px solid #62659C;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.AdditionalPictures .Pictures {
+
+}
+
+.AdditionalPictures .Pictures button {
+    margin: 16px;
+    font-size: 16px;
+    color: #FFFFFF;
+    background: linear-gradient(90deg, rgba(199, 192, 228, 0.79) 0%, rgba(168, 106, 248, 0.79) 100%);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 15px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.AdditionalPictures .Pictures button:active {
+    transform: translateY(2px);
+}
+
+.InfoBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+form > button {
+    background: linear-gradient(103.69deg, #E2A4FF 16.17%, #9450B4 89.17%);
+    box-shadow: 0px 0px 17.4px #E2A4FF;
+    border-radius: 225px;
+    border: none;
+    color: white;
+    width: 15%;
+    padding: 16px;
+    align-self: center;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+form > button:active {
+    transform: translateY(1px);
+}

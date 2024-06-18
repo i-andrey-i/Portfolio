@@ -1,0 +1,70 @@
+input[type=file].HiddenInput  {
+    display: none;
+}
+
+.PictureSelector {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.HeadPart {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+.CancelIcon {
+    color: red;
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.PictureSelector .ImageContainer {
+    display: flex;
+    border-radius: 5px;
+    background-color: #E0EBFE;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #708ACE;
+    font-size: 48px;
+}
+
+.PictureSelector .ImageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.DescriptionInput {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.DescriptionInput#text {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.DescriptionInput textarea {
+    resize: none;
+    border-radius: 8px;
+    background-color: #F3F8FF;
+    color: #464671;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px;
+    border: none;
+}
+
+.DescriptionInput textarea:focus {
+    outline: none;
+}

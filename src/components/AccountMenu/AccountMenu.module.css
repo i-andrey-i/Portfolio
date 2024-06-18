@@ -1,0 +1,70 @@
+div.AllShit {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+div.MainContainer {
+    background-color: #95B8EE;
+    border-radius: 28px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+ul.ProfileNavigation {
+    list-style-type: none;
+    padding: 16px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+li.ProfileNavigationItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    color: #FFFFFF;
+}
+
+li.ProfileNavigationItem a, li.ProfileNavigationItem a:visited {
+    color: inherit;
+}
+
+.ExitContainer {
+    border-top: #5E90DA solid 1px;
+    padding: 16px;
+}
+
+button.Exit {
+    background: none;
+    border: none;
+    color: red;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+button.NewProject {
+    background: linear-gradient(100.73deg, #B47CFC 8.32%, #7432CA 78.38%);
+    box-shadow: 0 7px 35px #DE7EF6;
+    border-radius: 28px;
+    padding: 24px;
+    border: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+}
+
+button.NewProject:active {
+    transform: translateY(1px);
+}

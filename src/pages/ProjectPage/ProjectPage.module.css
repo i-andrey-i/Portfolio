@@ -1,0 +1,132 @@
+.Project {
+    border-radius: 26px;
+    background-color: #FFFFFF;
+}
+
+.ProjectHeader {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #000000;
+    padding: 32px;
+    gap: 16px;
+}
+
+button.SubscribeButton {
+    margin-left: auto;
+    background: linear-gradient(103.69deg, #E2A4FF 16.17%, #9450B4 89.17%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 32px;
+    padding: 16px;
+    border: none;
+    color: #FFFFFF;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button.UnsubscribeButton {
+    margin-left: auto;
+    background: linear-gradient(103.69deg, #e2d3e5 16.17%, #d082ed 89.17%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 32px;
+    padding: 16px;
+    border: none;
+    color: #8F4EE3;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button.active {
+    transform: translateY(1px);
+}
+
+.UserInfo {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    cursor: pointer;
+}
+
+.UserInfo .ImageContainer {
+    display: flex;
+    overflow: hidden;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+
+.UserInfo p {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.ImageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ProjectMeta {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+}
+
+.IconBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+.Like {
+    cursor: pointer;
+}
+
+.ProjectInfo {
+    padding: 24px 32px;
+    border-bottom: 1px solid #000000;
+}
+
+.ProjectInfo h2 {
+    color: #3A3171;
+    font-weight: 700;
+    font-size: 26px;
+    text-align: center;
+    margin: 0;
+}
+
+.ProjectInfo p {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 400;
+    white-space: pre-wrap;
+    line-height: 24px;
+}
+
+.CreatedAt {
+    color: #000000;
+    font-weight: 700;
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.CreatedAt span {
+    color: #3A3171;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.ProjectMedia {
+    padding: 32px;
+}
+
+.ProjectPictures {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+    gap: 32px;
+}
