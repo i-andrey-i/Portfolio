@@ -11,6 +11,34 @@
     gap: 16px;
 }
 
+button.SubscribeButton {
+    margin-left: auto;
+    background: linear-gradient(103.69deg, #E2A4FF 16.17%, #9450B4 89.17%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 32px;
+    padding: 16px;
+    border: none;
+    color: #FFFFFF;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button.UnsubscribeButton {
+    margin-left: auto;
+    background: linear-gradient(103.69deg, #e2d3e5 16.17%, #d082ed 89.17%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 32px;
+    padding: 16px;
+    border: none;
+    color: #8F4EE3;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button.active {
+    transform: translateY(1px);
+}
+
 .UserInfo {
     display: flex;
     flex-direction: row;
